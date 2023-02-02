@@ -5,6 +5,7 @@ nav:
     - index.md
     - Page 1: home/page-1.md
     - Page 2: home/page-2.md
+    - Page 3: home/page-3.md
 
 theme:
   name: material
