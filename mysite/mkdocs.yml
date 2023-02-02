@@ -1,11 +1,10 @@
-site_name: My Docs
+site_name: 天降一个亿的笔记本
 
 nav:
-  - Home:
+  - 主页:
     - index.md
-    - Page 1: home/page-1.md
-    - Page 2: home/page-2.md
-    - Page 3: home/page-3.md
+  - 概率论与数理统计:
+    - 第一章: 概率论与数理统计/20230202.md
 
 theme:
   name: material
