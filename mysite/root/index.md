@@ -65,7 +65,7 @@
    ```
    git init
    git add .
-   git commit -m"update"(可以不叫update)
+   git commit -m "update"(可以不叫update)
    git remote add origin https://github.com/Tianjiangyigeyi/note.git
    git push -u origin master
    ```
