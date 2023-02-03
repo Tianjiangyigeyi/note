@@ -12,6 +12,8 @@
         <link rel="prev" href="../../readme/">
       
       
+        <link rel="next" href="../20230203/">
+      
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
     
@@ -347,6 +349,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -506,6 +510,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20230203/" class="md-nav__link">
+        第二章
+      </a>
     </li>
   
 
@@ -682,10 +700,7 @@
 <p><em>e.g ：抛硬币</em>  </p>
 <h3 id="12">1.2. 样本空间</h3>
 <p>定义：随机试验E的所有结果构成的集合称为E的<strong>样本空间</strong>，记为S={e},称S中的元素e为<strong>样本点</strong>，一个元素的单点集称为<strong>基本事件</strong>。</p>
-<p><em>e.g："一枚硬币抛一次"的样本空间是</em>
-$$
-S = {正面H,反面T};
-$$</p>
+<p><em>e.g："一枚硬币抛一次"的样本空间是</em> <span class="arithmatex">\(S = \{正面H,反面T\};\)</span></p>
 <h3 id="13">1.3. 随机事件</h3>
 <p>定义：一般我们称S的子集A为E的<strong>随机事件A</strong>，简称<strong>事件A</strong>。当且仅当A所包含的一个样本点发生称<strong>事件A发生</strong>。</p>
 <ul>
@@ -693,7 +708,7 @@ $$</p>
 <li>如果将S亦视作事件，则每次试验S总是发生，故又称S为<strong>必然事件。</strong></li>
 <li>记<em>ϕ</em> 为空集，不包含任何样本点, 则每次试验<em>ϕ</em> 都不发生, 称<em>ϕ</em> 为<strong>不可能事件。</strong></li>
 </ul>
-<p><img alt="image-20230203172011284" src="C:\Users\huangshengy\AppData\Roaming\Typora\typora-user-images\image-20230203172011284.png" /></p>
+<p><img alt="image-20230203172011284" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302032116594.png" /></p>
 <ul>
 <li>概率中常有以下定义：由n个元件组成的系统，其中一个损坏，则系统就损坏，此时这一系统称为“<strong>串联系统</strong>”；若有一个不损坏，则系统不损坏，此时这一系统称为“<strong>并联系统</strong>”。 </li>
 </ul>
@@ -729,32 +744,21 @@ $$</p>
 <p>定义:<span class="arithmatex">\(P(B|A) = \frac{P(AB)}{P(A)}\ \ \ \ P(A) \neq 0\)</span></p>
 <ul>
 <li>
-<p><strong>乘法公式:</strong>
-  $$
-  P(AB)=P(A)\bullet P(B|A)=P(B)\bullet P(A|B)
-  $$</p>
+<p><strong>乘法公式:</strong> <span class="arithmatex">\(P(AB)=P(A)\bullet P(B|A)=P(B)\bullet P(A|B)\)</span></p>
 </li>
 <li>
-<p><strong>全概率公式:</strong>
-  $$
-  P(A) = \sum_{j=1}^{n}P(B_j)P(A|B_j)
-  $$</p>
+<p><strong>全概率公式:</strong><span class="arithmatex">\(P(A) = \sum_{j=1}^{n}P(B_j)P(A|B_j)\)</span></p>
 </li>
 <li>
-<p><strong>贝叶斯公式:</strong>
-  $$
-  P(B_k|A)=\frac{P(B_kA)}{P(A)}=\frac{P(B_k)P(A|B_k)}{\sum_{j=1}^{n}P(B_j)P(A|B_j)};
-  $$</p>
+<p><strong>贝叶斯公式:</strong><span class="arithmatex">\(P(B_k|A)=\frac{P(B_kA)}{P(A)}=\frac{P(B_k)P(A|B_k)}{\sum_{j=1}^{n}P(B_j)P(A|B_j)};\)</span></p>
 </li>
-<li>
-<p>其中,我们称<span class="arithmatex">\(P(B_j)\)</span>这种事先知道的概率为<strong>先验概率</strong>;而<span class="arithmatex">\(P(B_j|A)\)</span>这种,当事件A发生后需要修正<span class="arithmatex">\(B_j\)</span>的概率为<strong>后验概率</strong>.</p>
-</li>
+<li>其中,我们称<span class="arithmatex">\(P(B_j)\)</span>这种事先知道的概率为<strong>先验概率</strong>;而<span class="arithmatex">\(P(B_j|A)\)</span>这种,当事件A发生后需要修正<span class="arithmatex">\(B_j\)</span>的概率为<strong>后验概率</strong>.</li>
 </ul>
 <p><em>e.g:有二个箱子，第1箱装有5件正品2件次品，第2箱装有3件正品2件次品。现从第一箱中随机取1件放到第2箱，然后从第2箱中随机取出1件。(1) 求第二次取到的是次品的概率; (2) 若已知第二次取到的是次品，求第一次取到的也是次品的概率。</em></p>
 <p><em>解:设A,B分别表示从第1，2箱取到次品</em></p>
-<p><em>(1)由全概率公式.</em><img alt="image-20230203185932849" src="C:\Users\huangshengy\AppData\Roaming\Typora\typora-user-images\image-20230203185932849.png" /></p>
+<p><em>(1)由全概率公式.</em><img alt="image-20230203211716197" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302032117234.png" /></p>
 <p><em>(2)由Bayes公式,</em></p>
-<p><img alt="image-20230203185954448" src="C:\Users\huangshengy\AppData\Roaming\Typora\typora-user-images\image-20230203185954448.png" /></p>
+<p><img alt="image-20230203211728777" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302032117813.png" /></p>
 <h2 id="5">5. 事件的独立性与独立试验</h2>
 <h3 id="51">5.1. 独立</h3>
 <p>定义:设<span class="arithmatex">\(A,B\)</span>为两个随机事件,若有<span class="arithmatex">\(P(AB)=P(A)P(B)\)</span>,则<span class="arithmatex">\(A,B\)</span>相互<strong>独立</strong>,其实际意义是,事件<span class="arithmatex">\(A\)</span>的发生与事件<span class="arithmatex">\(B\)</span>的发生互不影响.</p>
@@ -772,8 +776,8 @@ $$</p>
 </ul>
 <p>都成立，则称事件<span class="arithmatex">\(A,B,C\)</span><strong>两两独立</strong>；</p>
 <ul>
-<li>如果<strong>同时还</strong>满足:<span class="arithmatex">\(P(ABC)=P(A)P(B)P(C)\)</span><span class="arithmatex">\(则称事件\)</span><span class="arithmatex">\(A,B,C\)</span>$<strong>相互独立</strong></li>
-<li><span class="arithmatex">\(相互独立 \Rightarrow 两两独立\)</span></li>
+<li>如果<strong>同时还</strong>满足:<span class="arithmatex">\(P(ABC)=P(A)P(B)P(C)\)</span>则称事件<span class="arithmatex">\(A,B,C\)</span><strong>相互独立</strong></li>
+<li>相互独立$ \Rightarrow $两两独立</li>
 </ul>
 <h3 id="52">5.2. 独立试验</h3>
 <p>定义:<span class="arithmatex">\(\{A_i\}\)</span>相互独立当且仅当<span class="arithmatex">\(\forall i_j,P(\prod_{j=1}^{k}A_{i_k})=\prod^{k}_{j=1}P(A_{i_j})\)</span></p>
