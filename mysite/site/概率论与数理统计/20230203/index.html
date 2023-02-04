@@ -815,52 +815,42 @@
 <hr />
 <p>几个重要的连续型随机变量分布:</p>
 <h3 id="41">4.1. 均匀分布</h3>
-<p>定义:设随机变量<span class="arithmatex">\(X\)</span>具有概率密度函数:
-$$
-f(x) =
+<p>定义:设随机变量<span class="arithmatex">\(X\)</span>具有概率密度函数:</p>
+<div class="arithmatex">\[f(x) =
 \begin{cases} 
-\frac{1}{b-a},  &amp; x\in(a,b), \
+\frac{1}{b-a},  &amp; x\in(a,b), \\
 0, &amp; 其他.
-\end{cases}
-$$
-则称<span class="arithmatex">\(X\)</span>服从区间<span class="arithmatex">\((a,b)\)</span>上的均匀分布,并记为<span class="arithmatex">\(X \sim U(a,b)\)</span>.</p>
-<p>分布函数:
-$$
-F(x) =
+\end{cases}\]</div>
+<p>则称<span class="arithmatex">\(X\)</span>服从区间<span class="arithmatex">\((a,b)\)</span>上的均匀分布,并记为<span class="arithmatex">\(X \sim U(a,b)\)</span>.</p>
+<p>分布函数:</p>
+<div class="arithmatex">\[F(x) =
 \begin{cases} 
-0,  &amp; x\le a, \
-\frac{x-a}{b-a}, &amp; a&lt;x&lt;b,\
+0,  &amp; x\le a, \\
+\frac{x-a}{b-a}, &amp; a&lt;x&lt;b,\\
 1, &amp; x\ge b.
-\end{cases}
-$$</p>
+\end{cases}\]</div>
 <p><img alt="image-20230204163738516" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302041637554.png" /></p>
 <p><img alt="image-20230204163752283" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302041637320.png" /></p>
 <h3 id="42">4.2. 正态分布</h3>
-<p>定义:设<span class="arithmatex">\(X\)</span>的概率密度函数为
-$$
-f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma ^2}},-\infty&lt;x&lt;+\infty
-$$
-其中<span class="arithmatex">\(-\infty &lt; \mu &lt; \infty ,\sigma &gt; 0\)</span>为常数,称<span class="arithmatex">\(X\)</span>服从参数为<span class="arithmatex">\(\mu,\sigma\)</span>的<strong>正态分布</strong>(<em>Gauss分布</em>),记为<span class="arithmatex">\(X\sim N(\mu,\sigma^ 2)\)</span>.</p>
-<p>分布函数:
-$$
-f(x)=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(t-\mu)^2}{2\sigma ^2}}dt
-$$</p>
+<p>定义:设<span class="arithmatex">\(X\)</span>的概率密度函数为</p>
+<div class="arithmatex">\[f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma ^2}},-\infty&lt;x&lt;+\infty\]</div>
+<p>其中<span class="arithmatex">\(-\infty &lt; \mu &lt; \infty ,\sigma &gt; 0\)</span>为常数,称<span class="arithmatex">\(X\)</span>服从参数为<span class="arithmatex">\(\mu,\sigma\)</span>的<strong>正态分布</strong>(<em>Gauss分布</em>),记为<span class="arithmatex">\(X\sim N(\mu,\sigma^ 2)\)</span>.</p>
+<p>分布函数:</p>
+<div class="arithmatex">\[f(x)=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(t-\mu)^2}{2\sigma ^2}}dt\]</div>
 <ul>
 <li>
 <p>当固定μ时，σ越大，曲线的峰越低，落在μ附近的概率越小，取值就越分散，即σ是反映X的取值分散性的一个指标。</p>
 </li>
 <li>
-<p>特别地,当<span class="arithmatex">\(\mu=0,\sigma=1\)</span>时,如果记此时的正态变量为<span class="arithmatex">\(Z\)</span>,即<span class="arithmatex">\(Z\sim N(0,1)\)</span>则它服从标准正态分布.其密度函数为
-  $$
-  \phi(x)=\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}},|x|&lt;+\infty
-  $$</p>
+<p>特别地,当<span class="arithmatex">\(\mu=0,\sigma=1\)</span>时,如果记此时的正态变量为<span class="arithmatex">\(Z\)</span>,即<span class="arithmatex">\(Z\sim N(0,1)\)</span>则它服从标准正态分布.其密度函数为</p>
 </li>
-<li>
-<p>对应的分布函数为:
-  $$
-  \Phi(x)=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{\frac{-t^2}{2}}dt
-  $$</p>
-</li>
+</ul>
+<p><span class="arithmatex">\(<span class="arithmatex">\(\phi(x)=\frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}},|x|&lt;+\infty\)</span>\)</span></p>
+<ul>
+<li>对应的分布函数为:</li>
+</ul>
+<p><span class="arithmatex">\(<span class="arithmatex">\(\Phi(x)=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{\frac{-t^2}{2}}dt\)</span>\)</span></p>
+<ul>
 <li>
 <p><a href="https://www.shuxuele.com/data/standard-normal-distribution-table.html">标准正态分布表</a></p>
 </li>
@@ -869,23 +859,19 @@ $$</p>
 </li>
 </ul>
 <h3 id="43">4.3. 指数分布</h3>
-<p>定义：设<span class="arithmatex">\(X\)</span>的密度函数为
-$$
-f(x) =
+<p>定义：设<span class="arithmatex">\(X\)</span>的密度函数为</p>
+<div class="arithmatex">\[f(x) =
 \begin{cases} 
-\lambda e^{-\lambda x},  &amp; x&gt;0, \
+\lambda e^{-\lambda x},  &amp; x&gt;0, \\
 0, &amp; x \le 0.
-\end{cases}
-$$
-其中<span class="arithmatex">\(\lambda &gt;0\)</span>为常数,则称<span class="arithmatex">\(X\)</span>服从参数为<span class="arithmatex">\(\lambda\)</span>的<strong>指数分布</strong>.记为<span class="arithmatex">\(X\sim E(\lambda)\)</span>或<span class="arithmatex">\(X\sim Exp(\lambda).\)</span></p>
-<p><span class="arithmatex">\(X\)</span>的分布函数为:
-$$
-F(x) =
+\end{cases}\]</div>
+<p>其中<span class="arithmatex">\(\lambda &gt;0\)</span>为常数,则称<span class="arithmatex">\(X\)</span>服从参数为<span class="arithmatex">\(\lambda\)</span>的<strong>指数分布</strong>.记为<span class="arithmatex">\(X\sim E(\lambda)\)</span>或<span class="arithmatex">\(X\sim Exp(\lambda).\)</span></p>
+<p><span class="arithmatex">\(X\)</span>的分布函数为:</p>
+<div class="arithmatex">\[F(x) =
 \begin{cases} 
-1- e^{-\lambda x},  &amp; x&gt;0, \
+1- e^{-\lambda x},  &amp; x&gt;0, \\
 0, &amp; x \le 0.
-\end{cases}
-$$</p>
+\end{cases}\]</div>
 <ul>
 <li><span class="arithmatex">\(X\)</span>具有<strong>无记忆性</strong> <em>(如果X表示等待时间，那么无记忆性说明只要还没等到，那么剩余等待时间仍然服从参数为λ的指数分布.)</em></li>
 </ul>
@@ -905,15 +891,13 @@ $$</p>
 <li>随机变量<span class="arithmatex">\(Y=g(X)\)</span>;</li>
 <li>函数<span class="arithmatex">\(y=g(x)\)</span>为一严格<strong>单调可微</strong>函数</li>
 </ul>
-<p>则记<span class="arithmatex">\(y=g(x)\)</span>的反函数为<span class="arithmatex">\(x=h(y)\)</span>,得到<span class="arithmatex">\(Y\)</span>的密度函数为:
-  $$
-  f_Y(y) =
+<p>则记<span class="arithmatex">\(y=g(x)\)</span>的反函数为<span class="arithmatex">\(x=h(y)\)</span>,得到<span class="arithmatex">\(Y\)</span>的密度函数为:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(f_Y(y) =
   \begin{cases} 
-  f_X(h(y))\cdot |h'(y)|,  &amp; y\in D, \
+  f_X(h(y))\cdot |h'(y)|,  &amp; y\in D, \\
   0, &amp; y \notin D.
-  \end{cases}
-  $$
-  其中<span class="arithmatex">\(D\)</span>为<span class="arithmatex">\(y=g(x)\)</span>的值域.</p>
+  \end{cases}\)</span>\)</span></p>
+<p>其中<span class="arithmatex">\(D\)</span>为<span class="arithmatex">\(y=g(x)\)</span>的值域.</p>
 <hr />
 <ul>
 <li>若<span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>,则<span class="arithmatex">\(Y=aX+b\sim N(a\mu+b,a^2\sigma^2)\)</span>.</li>
