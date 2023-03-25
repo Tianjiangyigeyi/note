@@ -1,0 +1,188 @@
+# 2. 两数相加(medium)
+
+*2023/3/5*
+
+---
+
+## 题目描述
+
+给你两个 **非空** 的链表，表示两个非负的整数。它们每位数字都是按照 **逆序** 的方式存储的，并且每个节点只能存储 **一位** 数字。
+
+请你将两个数相加，并以相同形式返回一个表示和的链表。
+
+你可以假设除了数字 0 之外，这两个数都不会以 0 开头。
+
+**示例 1：**
+
+![img](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202303062056941.jpeg)
+
+```
+输入：l1 = [2,4,3], l2 = [5,6,4]
+输出：[7,0,8]
+解释：342 + 465 = 807.
+```
+
+**示例 2：**
+
+```
+输入：l1 = [0], l2 = [0]
+输出：[0]
+```
+
+**示例 3：**
+
+```
+输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+输出：[8,9,9,9,0,0,0,1]
+```
+
+ 
+
+**提示：**
+
+- 每个链表中的节点数在范围 `[1, 100]` 内
+- `0 <= Node.val <= 9`
+- 题目数据保证列表表示的数字不含前导零
+
+----
+
+## 我的答案
+
+```c
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+#include <stdlib.h>
+struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2){
+    struct ListNode* head, *tail, * temp;
+    int carry = 0, res = 0, val1, val2;
+    head = NULL;
+    tail = NULL;
+    while(l1 != NULL || l2 != NULL || carry ){
+        temp = (struct ListNode*)malloc(sizeof(struct ListNode));
+        temp->val = 0;
+        temp->next = NULL;
+        if(l1 == NULL){
+            val1 = 0;
+        }else{
+            val1 = l1->val;
+            l1 = l1->next;
+        }
+        if(l2 == NULL){
+            val2 = 0;
+        }else{
+            val2 = l2->val;
+            l2 = l2->next;
+        }
+
+        res = val1 + val2;
+        if(res + carry > 9){
+            res = res - 10 + carry;
+            carry = 0;
+            temp->val = res;
+            carry = 1;
+        }else{
+            res = res + carry;
+            carry = 0;
+            temp->val = res;
+        }
+        if(head == NULL){
+            head = temp;
+            tail = head;
+
+        }else{
+            tail->next = temp;
+            tail = tail->next;
+        }
+    }
+    return head;
+}
+```
+
+```c++
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode *head = nullptr, *tail = nullptr;
+        int carry = 0;
+        while(l1 || l2 || carry){
+            int n1 = l1 ? l1->val : 0;
+            int n2 = l2 ? l2->val : 0;
+            int sum = n1 + n2 + carry;
+            if(!head){
+                head = tail = new ListNode(sum % 10);
+            }else{
+                tail->next = new ListNode(sum % 10);
+                tail = tail->next;
+            }
+            carry = sum / 10;
+            if(l1){
+                l1 = l1->next;
+            }
+            if(l2){
+                l2 = l2->next;
+            }
+        }
+        return head;
+    }
+};
+```
+
+- 先用C写的,AC了之后看了题解,思路基本是一样的,细节有所出入,跟着题解写了一遍C++的版本,思路很简单,就是借鉴加法的原理,只不过要用链表实现.
+
+---
+
+## 参考答案
+
+```c++
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode *head = nullptr, *tail = nullptr;
+        int carry = 0;
+        while (l1 || l2) {
+            int n1 = l1 ? l1->val: 0;
+            int n2 = l2 ? l2->val: 0;
+            int sum = n1 + n2 + carry;
+            if (!head) {
+                head = tail = new ListNode(sum % 10);
+            } else {
+                tail->next = new ListNode(sum % 10);
+                tail = tail->next;
+            }
+            carry = sum / 10;
+            if (l1) {
+                l1 = l1->next;
+            }
+            if (l2) {
+                l2 = l2->next;
+            }
+        }
+        if (carry > 0) {
+            tail->next = new ListNode(carry);
+        }
+        return head;
+    }
+};
+```
+
+---
+
+## 感想
+
+最近这段时间一直在学C++的语法,后面的题都打算用C++来写了,边写边学
