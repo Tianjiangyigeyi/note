@@ -3,7 +3,7 @@ site_name: bk's notebook
 nav:
   - 主页: readme.md
   - 其他资料:
-    - 怎样部署到github: 怎样部署到Github.md
+    - 怎样部署到github: 其他资料/怎样部署到Github.md
   - 主干课程: 
     - 概率论与数理统计:
       - 第一章: 概率论与数理统计/20230202.md
