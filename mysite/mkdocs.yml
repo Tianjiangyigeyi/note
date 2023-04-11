@@ -37,7 +37,8 @@ nav:
   - 图形学:
     - SSR算法小记: 图形学/SSR算法小记(Screen-Space-Reflection).md
   - 侯捷cpp:
-    - 如何优雅地写一个类: 跟侯捷学cpp/如何优雅地写一个类.md
+    - c++面向对象程序设计: 跟侯捷学cpp/c++面向对象程序设计.md
+    - 兼谈对象模型: 跟侯捷学cpp/兼谈对象模型.md
 theme:
   name: material
   icon:
