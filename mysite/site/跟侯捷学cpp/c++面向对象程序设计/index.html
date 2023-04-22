@@ -12,12 +12,14 @@
         <link rel="prev" href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/SSR%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0%28Screen-Space-Reflection%29/">
       
       
+        <link rel="next" href="../%E5%85%BC%E8%B0%88%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/">
+      
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
     
     
       
-        <title>如何优雅地写一个类 - bk's notebook</title>
+        <title>c++面向对象程序设计 - bk's notebook</title>
       
     
     
@@ -69,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#c" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              如何优雅地写一个类
+              c++面向对象程序设计
             
           </span>
         </div>
@@ -1140,6 +1142,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1169,10 +1173,90 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          c++面向对象程序设计
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        如何优雅地写一个类
+        c++面向对象程序设计
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    如何优雅地写一个类?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-with-pointer-members" class="md-nav__link">
+    Class with pointer members
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    复习String类的实现过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    类模板，函数模板，及其他
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    组合与继承
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    虚函数与多态
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%85%BC%E8%B0%88%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        兼谈对象模型
+      </a>
     </li>
   
 
@@ -1204,6 +1288,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    如何优雅地写一个类?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-with-pointer-members" class="md-nav__link">
+    Class with pointer members
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    复习String类的实现过程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    类模板，函数模板，及其他
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    组合与继承
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    虚函数与多态
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1221,7 +1355,9 @@
 
 
 
-<h1 id="_1">如何优雅地写一个类?</h1>
+<h1 id="c">C++面向对象高级编程(上)</h1>
+<hr />
+<h2 id="_1">如何优雅地写一个类?</h2>
 <hr />
 <blockquote>
 <p>侯捷面向对象编程上篇第六章内容</p>
@@ -1292,6 +1428,271 @@ operator &lt;&lt; (ostream&amp; os, const complex&amp; x)
 
 #endif // _COMPLEX_
 </code></pre>
+<h2 id="class-with-pointer-members">Class with pointer members</h2>
+<hr />
+<ul>
+<li>拷贝构造&amp;拷贝赋值:一个一个bit拷贝过去,所以指针不能直接用编译器的拷贝(浅拷贝),只要类包含指针就要写出以下三个函数(<strong>Big three</strong>)</li>
+<li>构造函数接受的参数是自己的东西<code>String (const String&amp; str);</code>则为<strong>拷贝构造函数</strong></li>
+<li><code>String&amp; operator = (const String&amp; str);</code>操作符重载,<strong>拷贝赋值</strong></li>
+<li>析构函数<code>~String();</code>:需要delete,防止内存泄露 </li>
+<li>拷贝构造&amp;拷贝赋值的区别:拷贝构造直接分配空间并赋值,拷贝赋值要先清除原来的内存空间(<em>这里要先</em><em>检测自我赋值</em>**)</li>
+</ul>
+<p>## 堆、栈与内存管理</p>
+<hr />
+<ul>
+<li>
+<p><strong>stack</strong>:大括号是一个作用域（scope），所谓stack就是作用域中的一块内存空间，<strong>在函数内声明的任何变量，其所使用的内存都取自上述stack</strong></p>
+</li>
+<li>
+<p><strong>heap</strong>:或成system heap（和数据结构中的heap不同），是指由<strong>操作系统</strong>提供的一块<strong>global</strong>内存空间，程序可以动态分配（allocated）从中获得若干区块（blocks），<strong>任何时候new的对象分配的内存空间都取自heap</strong>,因此,<code>new</code>的变量必须要<code>delete</code>不然将会内存泄露(指针死亡,指针指向的内存空间却没有)</p>
+</li>
+<li>
+<p><strong>静态变量</strong>:若在作用域中用<code>static</code>关键字声明的变量,不会再作用域结束后消失</p>
+</li>
+<li>
+<p><strong>全局变量</strong>:在<code>main</code>函数之前声明,其生命在整个程序结束后才会结束,可以把它视为一种<code>static obj</code>,其作用域是整个程序</p>
+</li>
+<li>
+<p><strong>new</strong>:<code>new</code>先分配内存,再调用<code>ctor</code></p>
+</li>
+<li>
+<p>```cpp
+    Complex* pc = new Complex(1, 2);</p>
+<p>//编译器转化为:
+/<em>1</em>/void<em> mem = operator new( sizeof(Complex) );
+//分配内存,其中的operator new是一个比较特殊的函数名,其内部调用malloc(mem)
+/</em>2<em>/pc = static_cast<Complex*>(mem);
+//转型
+/</em>3*/pc-&gt;Complex::Complex(1, 2);
+//构造函数
+```</p>
+</li>
+<li>
+<p><strong>delete</strong>:<code>delete</code>先调用<code>dtor</code>,再释放内存</p>
+</li>
+<li>
+<p>```cpp
+    String* ps = new String("Hello");
+    ...
+    delete ps;</p>
+<p>//编译器转化为:
+/<em>1</em>/String::~String(ps);
+//析构函数
+/<em>2</em>/operator delete(ps);
+//释放内存,其中的operator delete是一个比较特殊的函数名,其内部调用free(ps)
+```</p>
+</li>
+<li>
+<p><img alt="image-20230407112621752" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202304071126913.png" /></p>
+</li>
+<li>
+<p><strong>array</strong>:<code>array new</code>要搭配<code>array delete</code></p>
+</li>
+<li>
+<p><code>cpp
+    Complex* p = new Complex[3];
+    ...
+    delete[] p; //唤起三次dtor
+    delete p;   //唤起一次dtor</code></p>
+</li>
+<li>
+<p><img alt="image-20230407113056384" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202304071130510.png" /></p>
+</li>
+<li>
+<p>如果<code>class</code>不带指针,两种delete的结果一样(因为不需要调用析构函数回收空间),但为养成好习惯,任何时候<code>array new</code>都要搭配<code>array delete</code></p>
+</li>
+</ul>
+<h2 id="string">复习String类的实现过程</h2>
+<hr />
+<pre><code class="language-cpp">#include &lt;string.h&gt;
+class String
+{
+public:
+    String(const char* cstr = 0);
+    String(const String&amp; str);
+    String&amp; operator=(const String&amp; str);
+    ~String();
+    char* get_c_str() const { return m_data; }
+private:
+    char* m_data;
+};
+
+inline String::String(const char* cstr = 0)
+{
+    if (cstr){
+        m_data = new char[strlen(cstr) + 1];
+        strcpy(m_data, cstr);
+    }else{
+        m_data = new char[1];
+        *m_data = '\0';
+    }
+}
+
+inline String::~String()
+{
+    delete[] m_data;
+}
+
+inline String::String(const String&amp; str)
+{
+    m_data = new char[strlen(str.m_data) + 1];
+    strcpy(m_data, str.m_data);
+}
+
+inline String&amp; String::operator=(const String&amp; str)
+{
+    if(this == &amp;str)
+        return *this;
+
+    delete[] m_data;
+    m_data = new char[strlen(str.m_data) + 1];
+    strcpy(m_data, str.m_data);
+    return *this;
+}
+</code></pre>
+<h2 id="_2">类模板，函数模板，及其他</h2>
+<hr />
+<ul>
+<li><strong><code>static</code>进一步补充</strong>:</li>
+</ul>
+<p>考虑这样一个class:</p>
+<p>```cpp
+  class Account {
+  public:
+      static double m_rate;
+      static void set_rate(const double&amp; x) { m_rate = x; }
+  };
+  double Account::m_rate = 8.0;</p>
+<p>int main()
+  {
+    Account::set_rate(5.0);</p>
+<pre><code>  Account a;
+  a.set_rate(7.0);
+</code></pre>
+<p>}
+  ```</p>
+<ul>
+<li>
+<p>编译器会自动在成员函数中补充一个参数<code>this</code>指向调用者,但是程序员在成员函数的参数列表<strong>不可以</strong>写它,而在函数里<strong>可写可不写</strong>.</p>
+</li>
+<li>
+<p>静态函数没有<code>this</code>,且静态函数只能存取静态数据, <strong><code>a.set_rate(7.0);</code>这种形式仍是合法的</strong>,但不会像普通的成员函数一样将<code>a</code>作为<code>this</code>传给成员函数</p>
+</li>
+<li>
+<p>静态数据必须要在<strong>类外</strong>定义<code>double Account::m_rate = 8.0;</code></p>
+</li>
+<li>
+<p>当我们想在某一处调用<code>静态函数</code>时,我们可能还没有<code>对象</code>,这时可以通过<code>Account::set_rate(5.0);</code>直接调用</p>
+</li>
+<li>
+<p>实现<strong><code>单例(Singleton)</code></strong>:把<code>ctors</code>放在<code>private</code>里</p>
+<p>```cpp
+class A {
+public:
+    static A&amp; getInstance();
+    setup(){ ... }
+private:
+    A();
+    A(const A&amp; rhs);
+    ...
+};</p>
+<p>A&amp; A::getInstance()
+{
+    static A a;
+    return a;
+}
+//一个非常好的写法,只有在用到getInstance时才会建立A,且只建立一个
+```</p>
+</li>
+<li>
+<p><strong>进一步补充<code>cout</code></strong>:是一个<code>ostream</code>对象,<code>ostream</code>类中有相当多的<code>operator&lt;&lt;</code>重载 </p>
+</li>
+<li>
+<p><strong>进一步补充class template, 类模板</strong>:<code>template&lt;typename T&gt;</code>在后面使用时<code>Complex&lt;double&gt; c1();</code>编译器会生成几乎一模一样的代码,只是将<code>T</code>替换成了<code>double</code>,因此有人说这样在成<strong>代码量的膨胀</strong>,但这并不一定是不好的,因为确确实实需要那么多份,膨胀的只是最开始带有<code>T</code>的版本.</p>
+</li>
+<li>
+<p><strong>进一步补充function template</strong>:<code>template &lt;class T&gt;</code>对于某些通用的函数(如比大小),可以使用函数模板,并且在使用时不必像类模板一样要显式指出<code>&lt;typename&gt;</code>,编译器会进行实参推导,自动选择合适的实参类型</p>
+</li>
+</ul>
+<p><code>cpp
+  template &lt;class T&gt;//如果不是自己定义的类则为typename
+  inline const T&amp; min(const T&amp; a, const T&amp; b)
+  {
+    return b &lt; a ? b : a;//这里需要补充许多操作符重载
+  }</code></p>
+<ul>
+<li><strong>进一步补充<code>namespace</code></strong>:</li>
+</ul>
+<p><img alt="image-20230407144057984" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202304081710779.png" /></p>
+<h2 id="_3">组合与继承</h2>
+<hr />
+<ul>
+<li>
+<p>面向对象的思想:类和类之间的关系</p>
+</li>
+<li>
+<p><strong>Composition(复合)</strong>:类里面有别的类,</p>
+</li>
+<li>
+<p><strong>Delegation(委托)</strong>:又称<strong><em>Composition by reference</em></strong>类里面有指针指向别的类,一个有名的手法</p>
+</li>
+</ul>
+<p><img alt="image-20230407151033167" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202304081710966.png" /></p>
+<ul>
+<li>
+<p><strong>pImpl :</strong> pointer to implement(Handle/Body),将接口与内部实现分离,可以做到客户端的共享</p>
+</li>
+<li>
+<p><strong>Inheritance(继承)</strong>:</p>
+</li>
+</ul>
+<p>```cpp
+  struct _List_node_base
+  {
+    _List_node_base<em> _M_next;
+      _List_node_base</em> _M_prev;
+  };</p>
+<p>template<typename _Tp>
+  struct _List_node
+      : public _List_node_base//public继承
+  {
+    _Tp _M_data;
+  }
+  ```</p>
+<ul>
+<li>
+<p>对于构造和析构,同样遵循<strong>构造由内而外,析构由外而内 </strong>原则</p>
+<blockquote>
+<p>需要特别注意的是,<em>base</em> <em>class(</em>父类)的<em>dtor</em>必须是<em>virtual</em>否则会出现<em>undefined behavior</em>.</p>
+</blockquote>
+</li>
+<li>
+<p>继承最主要是搭配虚函数</p>
+</li>
+</ul>
+<h2 id="_4">虚函数与多态</h2>
+<hr />
+<ul>
+<li>
+<p>在任何成员函数之前加上<code>virtual</code></p>
+</li>
+<li>
+<p>数据被继承下来,占用了内存的一部分,但是函数的继承,继承的是函数的调用权</p>
+</li>
+<li>
+<p><strong>虚函数</strong>:</p>
+</li>
+<li>
+<p><strong>非虚函数(<em>non-virtual</em>)</strong>:你<strong>不希望子类重新定义</strong>(<em>overwrite,覆写</em>)它</p>
+</li>
+<li><strong>虚函数(<em>virtual</em>)</strong>:你<strong>希望子类重新定义</strong>(<em>overwrite,覆写</em>)它,且它<strong>已经有了默认的定义</strong></li>
+<li>
+<p><strong>纯虚函数(<em>pure virtual</em>)</strong>:子类<strong>一定要重新定义</strong>(<em>overwrite,覆写</em>)它,它<strong>没有默认的定义</strong></p>
+</li>
+<li>
+<p><img alt="image-20230408132537111" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202304081710713.png" /></p>
+</li>
+</ul>
 
 
 

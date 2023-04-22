@@ -4,6 +4,7 @@ nav:
   - 主页: readme.md
   - 其他资料:
     - 怎样部署到github: 其他资料/怎样部署到Github.md
+    - c#: 其他资料/csharp.md
   - 主干课程: 
     - 概率论与数理统计:
       - 第一章: 概率论与数理统计/20230202.md
@@ -19,13 +20,15 @@ nav:
     - 计组:
       - lec1: 计组/lec1.md
     - DB:
-      - lec1: 数据库系统/lec1.md
+      - 范式: 数据库系统/范式.md
     - ADS:
       - lec1: ADS/lec1.md
       - lec2: ADS/lec2.md
       - lec4: ADS/lec4.md
+      - lec7: ADS/lec7.md
   - LeetCode刷题笔记:
     - 动态规划: LeetCode刷题笔记/动态规划.md
+    - 排序: LeetCode刷题笔记/排序.md
     - 1.两数之和(easy): LeetCode刷题笔记/1两数之和.md
     - 2.两数相加(medium): LeetCode刷题笔记/2两数相加.md
     - 3.无重复字符的最长子串(medium): LeetCode刷题笔记/3无重复字符的最长子串.md
@@ -36,9 +39,12 @@ nav:
     - 15.三数之和(medium): LeetCode刷题笔记/15三数之和.md
   - 图形学:
     - SSR算法小记: 图形学/SSR算法小记(Screen-Space-Reflection).md
+    - OpenGL: 图形学/LearnOpenGL.md
+    - GAMES101: 图形学/GAMES101.md
   - 侯捷cpp:
     - c++面向对象程序设计: 跟侯捷学cpp/c++面向对象程序设计.md
     - 兼谈对象模型: 跟侯捷学cpp/兼谈对象模型.md
+    - c++标准库体系结构与内核分析: 跟侯捷学cpp/c++标准库体系结构与内核分析.md
 theme:
   name: material
   icon:

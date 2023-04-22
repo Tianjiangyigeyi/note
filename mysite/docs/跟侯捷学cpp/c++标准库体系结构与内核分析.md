@@ -1,0 +1,71 @@
+# C++标准库体系结构与内核分析
+
+> 所谓**泛型**编程(GP, Generic Programming), 就是使用**模板**为主要工具来编写程序.
+>
+> 而**STL**(Standard Template Library 标准模板库)是GP最成功的作品
+
+
+
+- C++标准库的header files 不带.h, 例如 `#include <vector>`
+- 新式C header files 不带.h, 例如`#include <cstdio>`
+- 旧式C header files(带有.h)仍然可用, 例如`#include <stdio.h>`
+
+
+
+## STL体系结构基础介绍
+
+**STL六大部件:**
+
+- **容器(Containers)**
+- 分配器(Allocators)
+- **算法(Algorithm)**
+- 迭代器(Iterators)
+- 适配器(Adapters)
+- 仿函式(Functors)
+
+![image-20230420200610997](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202304202006100.png)
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <functional>
+
+using namespace std;
+
+int main()
+{
+    int ia[6] = {1, 2, 3, 4, 5, 6};
+    vector<int,allocator<int>> v1(ia, ia + 6);
+
+    cout << count_if(v1.begin(), v1.end(), not1(bind2nd(less<int>(), 3)));
+
+    return 0;
+}
+```
+
+
+
+STL的容器基本上都是采用的"前闭后开"区间, 即begin是头, end是尾的最后一个
+
+
+
+## 容器之分类及各种测试
+
+>  为了选用更高效的容器, 我们需要了解各种容器的特性
+
+两大种类:
+
+- Sequence Containers(循序式容器): Array, Vector, Deque, List, Forward-List(数列和链表)
+- Associative Containers(关联式容器): Set/Multiset, Map/MultiMap(红黑树)
+- Unordered Containers(不定序式容器): Unordered Set, Unordered map(哈希表)
+
+ 
+
+vector 的内存增长是两倍增长, 而增长这个过程是在另外一个地方开辟空间, 再拷贝过去, 是一个非常缓慢的过程
+
+algorithm中的算法都是全局函数, 可以在调用时显示地指出它是全局函数, 即在函数名前加双冒号: `::find(c.begin(), c.end(), target);`, 如果不加双冒号, 编译器也会在当前作用域寻找寻找不到的时候转向去寻找全局函数.   
+
+有全局函数sort, 有的容器自带的也有sort, 如果有自带的sort请用自带的
+
+queue和stack的容器底层实现是用deque, 因为deque功能更强大, 所以很多人把它们(stack和queue)称为容器的适配器(Container Adapters)
