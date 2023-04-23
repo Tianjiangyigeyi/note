@@ -21,11 +21,7 @@ nav:
       - lec1: 计组/lec1.md
     - DB:
       - 范式: 数据库系统/范式.md
-    - ADS:
-      - lec1: ADS/lec1.md
-      - lec2: ADS/lec2.md
-      - lec4: ADS/lec4.md
-      - lec7: ADS/lec7.md
+    - ADS: ADS/期中复习.md
   - LeetCode刷题笔记:
     - 动态规划: LeetCode刷题笔记/动态规划.md
     - 排序: LeetCode刷题笔记/排序.md
