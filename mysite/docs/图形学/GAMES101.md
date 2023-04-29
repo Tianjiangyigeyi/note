@@ -227,13 +227,18 @@ $$M_{persp\rightarrow ortho }=\begin{bmatrix}
   ![image-20230413202645742](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202304132026857.png)
 
 - **MSAA(多重采样反走样 Multisample anti aliasing)**
-  -  Average the $N\times N$ samples "inside" each pixel.是一种"模糊"的方法
+  
+  - 把像素内部分为$N\times N$个点, 判断这些点有多少个是位于三角形内的, 根据比例为该像素着色
+  - Average the $N\times N$ samples "inside" each pixel.是一种"模糊"的方法
   - What's the cost of MSAA:增加了计算量,理论上会增加$N\times N$计算量,实际上工业界会取点并不会这么规则,实际上不会增加如此大的计算量
-
+  
 - **超分辨率:**
+
+  - 本质上是在光栅化之后的结果图应用, 一般用于屏幕分辨率太高而图像分辨率较低, 通过"猜"的方式来提高分辨率, 而进行"猜"最好的方式就是深度学习, 于是有了DLSS
   - From low resolution to high resolution
   - Essentially still "not enough samples" problem
   - **DLSS**(Deep Learning Super Sampling)
+
 
 
 
