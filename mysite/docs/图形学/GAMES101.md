@@ -2,11 +2,11 @@
 
 ---
 
-
-
+> 
+>
 > **我的图形学启蒙,世界上最好的图形学教程之一 !**
-
-
+>
+> 
 
 ## MVP(model-view-projection)
 
@@ -207,7 +207,7 @@ $$M_{persp\rightarrow ortho }=\begin{bmatrix}
   > \mathrm{i} & \mathrm{j} & \mathrm{k} \\
   > x_{1} & y_{1} & z_{1} \\
   > x_{2} & y_{2} & z_{2}
-  > \end{array}\right|=\left(y_{1} z_{2}-y_{2} z_{1}\right) i-\left(x_{1} z_{2}-x_{2} z_{1}\right) j+\left(x_{1} y_{2}-x_{2} y_{1}\right) k$$
+  > \end{array}\right|=\left(y_{1} z_{2}-y_{2} z_{1}\right) i+\left(z_{1} x_{2}-z_{2} x_{1}\right) j+\left(x_{1} y_{2}-x_{2} y_{1}\right) k$$
 
 - Bounding box：包围盒，只有包围盒里的像素才需要光栅化，包围盒之外的像素**太远了！**
 
@@ -218,6 +218,7 @@ $$M_{persp\rightarrow ortho }=\begin{bmatrix}
 #### 反走样 
 
 - 采样出现瑕疵(artifacts)的原因是采样的频率跟不上信号的频率
+
 - Anti-Aliasing:
   - Pre-filter:对原始信号进行一个模糊(滤波)(卷积) 
   - 提高采样率(reduce aliasing error not anti-aliasing)
@@ -231,6 +232,10 @@ $$M_{persp\rightarrow ortho }=\begin{bmatrix}
   - 把像素内部分为$N\times N$个点, 判断这些点有多少个是位于三角形内的, 根据比例为该像素着色
   - Average the $N\times N$ samples "inside" each pixel.是一种"模糊"的方法
   - What's the cost of MSAA:增加了计算量,理论上会增加$N\times N$计算量,实际上工业界会取点并不会这么规则,实际上不会增加如此大的计算量
+  
+  >SSAA(超采样反走样 Super Sampling Anti Aliasing)
+  >
+  >MSAA是SSAA的优化, **MSAA与SSAA的区别在于像素着色器（Pixel Shader）的运行次数**。
   
 - **超分辨率:**
 
@@ -678,3 +683,260 @@ Simplification via Quadric Error
   - 数据结构：优先队列 or 堆
 - 贪心算法，非全局最优
 - 可以有的放矢
+
+
+
+## 光线追踪(Ray Tracing)
+
+光栅化不能解决**全局**的问题, 如
+
+1. 软阴影
+2. 毛玻璃
+3. 间接光照
+
+
+
+- 光线追踪的问题: **慢**, 一帧需要10K的CPU小时(hour)
+
+- 光线追踪的优势: 质量高
+
+
+
+### Light Rays(光线的性质)
+
+1. 光沿直线传播
+2. 光线不会碰撞
+3. **光路可逆***
+
+
+
+### 光线追踪的基本过程
+
+- 对于每个像素, 从眼睛投出去一个光线, 与场景中的物体相交找到交点
+- 从交点出发向光源连线判断是否可见
+- 算着色并写回像素
+
+
+
+### 最古老的光线追踪方法: Whitted-Style
+
+- 本质是一种递归的方法
+- 我们知道, 当光线遇到玻璃的时候, 会有一部分光线反射, 一部分光线折射
+- 这样一条从眼睛投射出去的光线就会与场景中的物体产生许多交点, 我们将每个交点都与光源连线判断是否可见, 如果可见, 则计算着色并加权写入像素
+
+- 从眼睛出去的光线叫做**primary ray**, 其他的叫做**secondary rays**, 交点与光源之间的连线叫做**shadow rays** 
+
+![image-20230507150315991](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305071503112.png)
+
+
+
+### 如何判断光线与物体的相交
+
+#### 判断一个点是否在一个物体内部
+
+从点向外部发出射线, 只要是在物体内部, 一定会与物体有**奇数**个交点
+
+#### 判断光线是否与三角形相交
+
+可以拆成两部分:
+
+1. 光线是否与三角形所在的平面相交
+2. 利用光栅化的思想, 判断这个交点是否在三角形内部
+
+#### 判断光线是否与平面相交
+
+- 首先我们要知道, 光线在图形学中可以简单地用向量来表示:$r(t)=o+td$, 其中o表示光线的出发点, d表示光线的方向, r表示光线在t时刻的位置
+
+- 那么, 如何表示一个平面呢? 我们可以用一条法线$N$和一个点$p'$来表示
+- 那么如何确定一个点$p$是否在平面上呢? 只需要满足$(p-p')\cdot N=0$即可
+
+ 因此, 我们联立解方程:
+
+1. Set $p=r(t)$ and solve for t
+
+2. $(p-p')\cdot N=(p+td-p')\cdot N=0$
+3. $t=\frac{(p'-o)\cdot N}{d\cdot N}$
+4. **Check**: $0 \leq t \leq \infin$
+
+
+
+> 除了上述方法, 我们还可以使用MT算法:
+>
+> ![image-20230507154719621](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305071547692.png)
+
+
+
+### 如何\*加速\*光线和表面的求交操作
+
+#### 包围体积(Bounding Volumes)
+
+- AABB(Axis-Aligned Box), 用一个平行于xyz轴的立方体包住(并不是每个物体有一个包围盒, 而是一个物体会占据哪些包围盒)
+- 六个面最晚的进入时间是$t_{enter}(可以为负)$, 最早的退出时间$t_{exit}$
+- ray和AABB相交当且仅当$t_{enter}<t_{exit}$ && $t_{exit}\ge0$
+- 场景被均等划分为若干个格子, 光线依次经过每个盒子时检测盒子内是否有物体, 我们假设检验光线是否与盒子相交的速度远快于检验光线是否与物体相交
+- 关于场景中应该放多少包围盒是一个玄学(经验模型)
+
+> 我承认阁下AABB加速很强, 但是假如我**操场上只放一个茶壶(Teaport in the stadium)**, 不知阁下又该如何应对?
+
+
+
+#### 空间划分(Spatial Partitions)
+
+>  物体分布稀疏的地方应该用更少的格子, 同理物体分布密集的地方需要更多的盒子
+
+##### 八叉树 (Oct-Tree)
+
+将一个立方体三个方向各来一刀切成八块, 同理在二维空间是四叉树, 在一维空间是二叉树, 但是在更高维时开支太大, 因此我们引入**KD-Tree**
+
+##### KD-Tree
+
+永远是沿某一个轴(面)将其砍成两个
+
+![image-20230507164418295](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305071644363.png)
+
+![image-20230507165311275](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305071655967.png)
+
+
+
+#### 物体划分(Object Partitions) & Bounding Volume Hierachy(BVH)
+
+- 得到了非常广泛的应用
+- 对于划分也很有讲究
+
+![image-20230507170039919](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305071700988.png)
+
+![image-20230507170239147](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305071702218.png)
+
+具体步骤:
+
+1. 找到包围盒
+2. 递归地将包围盒中的物体分成两部分
+   - 怎么划分?
+     - 选择合适的轴(x or y or z)划分
+     - 总是选择最长的轴进行划分
+     - 选择中间物体所在的位置进行划分 
+       - 怎么找中间物体: 快速选择算法($O(N)$)[[力扣215\] 快速选择算法&划分树 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/128524579)
+3. 给这两部分分别计算新的包围盒
+4. 当节点中有足够少的三角形时停止递归
+5. 在叶子节点里记录下实际的物体
+
+```pseudocode
+Intersect(Ray ray, BVH node)
+{
+	if (ray misses node.bbox)	return;
+	
+	if (node is a leaf node)
+		test intersection with all objs;
+		return closest intersection;
+		
+    hit1 = Intersect(ray, node.child1);
+    hit2 = Intersect(ray, node.child2);
+    
+    return the closer of hit1, hit2;
+}
+```
+
+
+
+### 辐射度量学(Basic radiometry)
+
+#### 为什么要学Radiometry
+
+- 如之前在作业3里面有`Light intensity = 10`, `10`是什么?
+- 布林冯模型是不真实的, Whitted style也是不真实的
+- 辐射度量学就是要真实
+
+#### 什么是Radiometry
+
+- Measurement system and units for illumination
+- Accurately measure the spatial properties of light
+  - New terms: Radiant flux, intensity, irradiance, radiance
+- Perform lighting calculations in a physically correct manner
+
+#### 名词解释
+
+##### Radiant Energy and Flux(Power)
+
+![image-20230507212026774](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305072120856.png)
+
+- 大概, Energy是能量, Flux是功率(通量?)
+
+##### Radiant Intensity
+
+- power per unit solid angle
+
+![image-20230507212357929](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305072123994.png)
+
+
+
+> 什么是立体角: 弧度制在三维空间的延伸
+>
+> ![image-20230507212543512](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305072125579.png)
+>
+> ![image-20230507212858623](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305072128683.png)
+
+
+
+##### 辐射照度(Irradiance)
+
+类似于通量的概念,**平方衰减**
+
+![image-20230509203021513](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305092030641.png)
+
+
+
+##### 辐射率(Radiance)
+
+定义: 每单位立体角每单位投影面积的能量
+
+![image-20230509204030472](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305092040568.png)
+
+Recall
+
+- Irradiance: 每单位投影面积的能量
+- intensity: 每单位立体角的能量
+
+so
+
+- Radiance: 每单位立体角的Irradiance
+- Radiance: 每单位投影面积的Intensity
+
+**Radiance无非就是在Irradiance的基础加了一个方向性**
+
+Irradiance就是对各个方向的Radiance的积分
+
+我们希望有一个函数能够定义一个点能向不同的点反射多少能量
+
+从各个方向接收到的irradiance, 反射到某一个方向的radiance上去
+
+
+
+##### 双向反射分布函数(BRDF)
+
+通俗定义: 微小面积$dA$从某一个微小立体角$d\omega_i$接收到的irradiance会反射多少到各个不同的立体角上去
+
+![image-20230510210239010](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305102102148.png)
+
+
+
+##### 反射方程
+
+$$L_r(p,\omega_r)=\int_{H^2}f_r(p,\omega_r\rightarrow \omega_i)L_i(p,\omega_i)\cos\theta_id\omega_i$$
+
+后面三项$L_i(p,\omega_i)\cos\theta_id\omega_i$可以看出是单位面积dA中收到的所有irradiance
+
+![image-20230510211024419](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305102110511.png)
+
+
+
+##### 渲染方程
+
+整个场景不止一束光线, 光线反射出来还会不断反射, 是一个递归的过程
+
+且有些物体不仅可以反射光线, 自己本身也可以发光
+
+$$L_{o}\left(p, \omega_{o}\right)=L_{e}\left(p, \omega_{o}\right)+\int_{\Omega^{+}} L_{i}\left(p, \omega_{i}\right) f_{r}\left(p, \omega_{i}, \omega_{o}\right)\left(n \cdot \omega_{i}\right) \mathrm{d} \omega_{i}$$
+
+其中$(n\cdot \omega_i)=\cos\theta_i$
+
+![image-20230510213657986](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305102136083.png)
