@@ -5,6 +5,7 @@ nav:
   - 其他资料:
       - 怎样部署到github: 其他资料/怎样部署到Github.md
       - c#: 其他资料/csharp.md
+      - git: 其他资料/git.md
   - 主干课程:
       - 概率论与数理统计:
           - 第一章: 主干课程/概率论与数理统计/20230202.md
@@ -21,7 +22,7 @@ nav:
           - 期中复习: 主干课程/计组.md
       - DB:
           - 范式: 主干课程/范式.md
-      - ADS: 主干课程/.md
+      - ADS: 主干课程/ads.md
   - LeetCode刷题笔记:
       - 动态规划: LeetCode刷题笔记/动态规划.md
       - 排序: LeetCode刷题笔记/排序.md
