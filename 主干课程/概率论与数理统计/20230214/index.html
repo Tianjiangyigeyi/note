@@ -9,22 +9,20 @@
       
       
       
-        <link rel="prev" href="../%E5%85%BC%E8%B0%88%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/">
       
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
     
     
       
-        <title>c++标准库体系结构与内核分析 - bk's notebook</title>
+        <title>第七章 参数估计 - bk's notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0d440cfe.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -40,7 +38,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#c" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -85,7 +83,7 @@
 
 <header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="bk&#39;s notebook" class="md-header__button md-logo" aria-label="bk's notebook" data-md-component="logo">
+    <a href="../../.." title="bk&#39;s notebook" class="md-header__button md-logo" aria-label="bk's notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              c++标准库体系结构与内核分析
+              第七章 参数估计
             
           </span>
         </div>
@@ -193,7 +191,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../readme.md" class="md-tabs__link">
+    <a href="../../../readme.md" class="md-tabs__link">
       主页
     </a>
   </li>
@@ -208,7 +206,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/%E6%80%8E%E6%A0%B7%E9%83%A8%E7%BD%B2%E5%88%B0Github/" class="md-tabs__link">
+      <a href="../../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/%E6%80%8E%E6%A0%B7%E9%83%A8%E7%BD%B2%E5%88%B0Github/" class="md-tabs__link">
         其他资料
       </a>
     </li>
@@ -229,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../概率论与数理统计/20230202.md" class="md-tabs__link">
+      <a href="../../../概率论与数理统计/20230202.md" class="md-tabs__link">
         主干课程
       </a>
     </li>
@@ -247,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-tabs__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-tabs__link">
         LeetCode刷题笔记
       </a>
     </li>
@@ -263,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/SSR%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0%28Screen-Space-Reflection%29/" class="md-tabs__link">
+      <a href="../../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/SSR%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0%28Screen-Space-Reflection%29/" class="md-tabs__link">
         图形学
       </a>
     </li>
@@ -273,15 +271,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../c%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-tabs__link">
         侯捷cpp
       </a>
     </li>
@@ -315,7 +311,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="bk&#39;s notebook" class="md-nav__button md-logo" aria-label="bk's notebook" data-md-component="logo">
+    <a href="../../.." title="bk&#39;s notebook" class="md-nav__button md-logo" aria-label="bk's notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -346,7 +342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../readme.md" class="md-nav__link">
+      <a href="../../../readme.md" class="md-nav__link">
         主页
       </a>
     </li>
@@ -396,7 +392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/%E6%80%8E%E6%A0%B7%E9%83%A8%E7%BD%B2%E5%88%B0Github/" class="md-nav__link">
+      <a href="../../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/%E6%80%8E%E6%A0%B7%E9%83%A8%E7%BD%B2%E5%88%B0Github/" class="md-nav__link">
         怎样部署到github
       </a>
     </li>
@@ -410,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/csharp/" class="md-nav__link">
+      <a href="../../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/csharp/" class="md-nav__link">
         c#
       </a>
     </li>
@@ -522,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../概率论与数理统计/20230202.md" class="md-nav__link">
+      <a href="../../../概率论与数理统计/20230202.md" class="md-nav__link">
         第一章
       </a>
     </li>
@@ -536,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../概率论与数理统计/20230203.md" class="md-nav__link">
+      <a href="../../../概率论与数理统计/20230203.md" class="md-nav__link">
         第二章
       </a>
     </li>
@@ -550,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../概率论与数理统计/20230204.md" class="md-nav__link">
+      <a href="../../../概率论与数理统计/20230204.md" class="md-nav__link">
         第三章
       </a>
     </li>
@@ -564,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../概率论与数理统计/20230205.md" class="md-nav__link">
+      <a href="../../../概率论与数理统计/20230205.md" class="md-nav__link">
         第四章
       </a>
     </li>
@@ -578,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../概率论与数理统计/20230206.md" class="md-nav__link">
+      <a href="../../../概率论与数理统计/20230206.md" class="md-nav__link">
         第五章
       </a>
     </li>
@@ -592,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../概率论与数理统计/20230213.md" class="md-nav__link">
+      <a href="../../../概率论与数理统计/20230213.md" class="md-nav__link">
         第六章
       </a>
     </li>
@@ -606,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../概率论与数理统计/20230214.md" class="md-nav__link">
+      <a href="../../../概率论与数理统计/20230214.md" class="md-nav__link">
         第七章
       </a>
     </li>
@@ -620,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../概率论与数理统计/20230215.md" class="md-nav__link">
+      <a href="../../../概率论与数理统计/20230215.md" class="md-nav__link">
         第八章
       </a>
     </li>
@@ -676,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../普通物理学2/普物2.md" class="md-nav__link">
+      <a href="../../../普通物理学2/普物2.md" class="md-nav__link">
         考前三天补天
       </a>
     </li>
@@ -732,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../计组/lec1.md" class="md-nav__link">
+      <a href="../../../计组/lec1.md" class="md-nav__link">
         lec1
       </a>
     </li>
@@ -788,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../数据库系统/范式.md" class="md-nav__link">
+      <a href="../../../数据库系统/范式.md" class="md-nav__link">
         范式
       </a>
     </li>
@@ -809,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ADS/期中复习.md" class="md-nav__link">
+      <a href="../../../ADS/期中复习.md" class="md-nav__link">
         ADS
       </a>
     </li>
@@ -882,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
         动态规划
       </a>
     </li>
@@ -896,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
         排序
       </a>
     </li>
@@ -910,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/1%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/1%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
         1.两数之和(easy)
       </a>
     </li>
@@ -924,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/2%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/2%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="md-nav__link">
         2.两数相加(medium)
       </a>
     </li>
@@ -938,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/3%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/3%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="md-nav__link">
         3.无重复字符的最长子串(medium)
       </a>
     </li>
@@ -952,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/4%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/4%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="md-nav__link">
         4.寻找两个正序数组的中位数(hard)
       </a>
     </li>
@@ -966,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/5%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/5%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
         5.最长回文子串(medium)
       </a>
     </li>
@@ -980,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/10%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/10%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="md-nav__link">
         10.正则表达式匹配(hard)
       </a>
     </li>
@@ -994,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/11%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/11%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" class="md-nav__link">
         11.盛最多水的容器(medium)
       </a>
     </li>
@@ -1008,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/15%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
+      <a href="../../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/15%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
         15.三数之和(medium)
       </a>
     </li>
@@ -1067,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/SSR%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0%28Screen-Space-Reflection%29/" class="md-nav__link">
+      <a href="../../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/SSR%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0%28Screen-Space-Reflection%29/" class="md-nav__link">
         SSR算法小记
       </a>
     </li>
@@ -1081,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/LearnOpenGL/" class="md-nav__link">
+      <a href="../../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/LearnOpenGL/" class="md-nav__link">
         OpenGL
       </a>
     </li>
@@ -1095,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/GAMES101/" class="md-nav__link">
+      <a href="../../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/GAMES101/" class="md-nav__link">
         GAMES101
       </a>
     </li>
@@ -1115,16 +1111,16 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
       
       
         
@@ -1141,7 +1137,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           侯捷cpp
@@ -1154,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      <a href="../../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
         c++面向对象程序设计
       </a>
     </li>
@@ -1168,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%85%BC%E8%B0%88%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+      <a href="../../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/%E5%85%BC%E8%B0%88%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
         兼谈对象模型
       </a>
     </li>
@@ -1180,59 +1176,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          c++标准库体系结构与内核分析
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E6%A0%87%E5%87%86%E5%BA%93%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%86%85%E6%A0%B8%E5%88%86%E6%9E%90/" class="md-nav__link">
         c++标准库体系结构与内核分析
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#stl" class="md-nav__link">
-    STL体系结构基础介绍
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    容器之分类及各种测试
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1271,15 +1219,103 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stl" class="md-nav__link">
-    STL体系结构基础介绍
+  <a href="#1" class="md-nav__link">
+    1. 点估计(矩估计，极大似然估计)
   </a>
+  
+    <nav class="md-nav" aria-label="1. 点估计(矩估计，极大似然估计)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1. 矩估计
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2. 极大似然估计
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    容器之分类及各种测试
+  <a href="#2" class="md-nav__link">
+    2. 估计量的评价准则
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 估计量的评价准则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1. 无偏性准则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2. 有效性准则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3. 均方误差准则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4. 相合性准则
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 区间估计(置信度，枢轴量)
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 区间估计(置信度，枢轴量)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 置信区间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2. 枢轴量法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 正态总体参数的区间估计
   </a>
   
 </li>
@@ -1303,59 +1339,52 @@
 
 
 
-<h1 id="c">C++标准库体系结构与内核分析</h1>
-<blockquote>
-<p>所谓<strong>泛型</strong>编程(GP, Generic Programming), 就是使用<strong>模板</strong>为主要工具来编写程序.</p>
-<p>而<strong>STL</strong>(Standard Template Library 标准模板库)是GP最成功的作品</p>
-</blockquote>
+<h1 id="_1">第七章 参数估计</h1>
+<hr />
+<p><em>不考内容（两个正态总体方差不等未知的均值差区间估计，非正态总体参数区间估计）</em></p>
+<h2 id="1">1. 点估计(矩估计，极大似然估计)</h2>
+<p><img alt="image-20230215004639242" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150046287.png" /></p>
+<h3 id="11">1.1. 矩估计</h3>
+<p><img alt="image-20230215010815812" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150108846.png" /></p>
+<p>基本步骤:</p>
+<ol>
+<li>求矩(<span class="arithmatex">\(\mu,v\)</span>)关于参数的函数</li>
+<li>求参数关于矩的反函数</li>
+<li>以样本矩<span class="arithmatex">\(A_i,B_i\)</span>代替总体矩(<span class="arithmatex">\(\mu,v\)</span>),得到参数的矩估计量</li>
+</ol>
+<h3 id="12">1.2. 极大似然估计</h3>
+<ol>
+<li>构造<strong>对数似然函数</strong>:<span class="arithmatex">\(l(\theta)=\ln L(\theta)=\ln p(x_1,...,x_n,\theta);\)</span></li>
+<li>令导数等于0,找<span class="arithmatex">\(l(\theta)\)</span>的最大值点(不是极大值点就是端点),得到极大似然估计值</li>
+</ol>
+<h2 id="2">2. 估计量的评价准则</h2>
+<h3 id="21">2.1. 无偏性准则</h3>
+<p><img alt="image-20230215011953180" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150119211.png" /></p>
+<h3 id="22">2.2. 有效性准则</h3>
+<p><img alt="image-20230215012236309" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150122337.png" /></p>
+<h3 id="23">2.3. 均方误差准则</h3>
+<p><img alt="image-20230215013028183" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150130216.png" /></p>
+<h3 id="24">2.4. 相合性准则</h3>
+<p><img alt="image-20230215013433811" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150134840.png" /></p>
+<h2 id="3">3. 区间估计(置信度，枢轴量)</h2>
+<p>找两个<span class="arithmatex">\(\theta\)</span>的估计量可以盖住真实的<span class="arithmatex">\(\theta\)</span></p>
+<h3 id="31">3.1 置信区间</h3>
+<p><img alt="image-20230215013800998" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150138029.png" /></p>
+<p><img alt="image-20230215014025529" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150140559.png" /></p>
+<p><img alt="image-20230215014035337" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150140364.png" /></p>
+<p><img alt="image-20230215014046564" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150140594.png" /></p>
+<h3 id="32">3.2. 枢轴量法</h3>
+<p><img alt="image-20230215014127168" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150141192.png" /></p>
 <ul>
-<li>C++标准库的header files 不带.h, 例如 <code>#include &lt;vector&gt;</code></li>
-<li>新式C header files 不带.h, 例如<code>#include &lt;cstdio&gt;</code></li>
-<li>旧式C header files(带有.h)仍然可用, 例如<code>#include &lt;stdio.h&gt;</code></li>
+<li>统计量:只是样本的函数</li>
+<li>枢轴量:只是样本和待估参数的函数</li>
 </ul>
-<h2 id="stl">STL体系结构基础介绍</h2>
-<p><strong>STL六大部件:</strong></p>
-<ul>
-<li><strong>容器(Containers)</strong></li>
-<li>分配器(Allocators)</li>
-<li><strong>算法(Algorithm)</strong></li>
-<li>迭代器(Iterators)</li>
-<li>适配器(Adapters)</li>
-<li>仿函式(Functors)</li>
-</ul>
-<p><img alt="image-20230420200610997" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202304202006100.png" /></p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;vector&gt;
-#include &lt;algorithm&gt;
-#include &lt;functional&gt;
-
-using namespace std;
-
-int main()
-{
-    int ia[6] = {1, 2, 3, 4, 5, 6};
-    vector&lt;int,allocator&lt;int&gt;&gt; v1(ia, ia + 6);
-
-    cout &lt;&lt; count_if(v1.begin(), v1.end(), not1(bind2nd(less&lt;int&gt;(), 3)));
-
-    return 0;
-}
-</code></pre>
-<p>STL的容器基本上都是采用的"前闭后开"区间, 即begin是头, end是尾的最后一个</p>
-<h2 id="_1">容器之分类及各种测试</h2>
-<blockquote>
-<p>为了选用更高效的容器, 我们需要了解各种容器的特性</p>
-</blockquote>
-<p>两大种类:</p>
-<ul>
-<li>Sequence Containers(循序式容器): Array, Vector, Deque, List, Forward-List(数列和链表)</li>
-<li>Associative Containers(关联式容器): Set/Multiset, Map/MultiMap(红黑树)</li>
-<li>Unordered Containers(不定序式容器): Unordered Set, Unordered map(哈希表)</li>
-</ul>
-<p>vector 的内存增长是两倍增长, 而增长这个过程是在另外一个地方开辟空间, 再拷贝过去, 是一个非常缓慢的过程</p>
-<p>algorithm中的算法都是全局函数, 可以在调用时显示地指出它是全局函数, 即在函数名前加双冒号: <code>::find(c.begin(), c.end(), target);</code>, 如果不加双冒号, 编译器也会在当前作用域寻找寻找不到的时候转向去寻找全局函数.   </p>
-<p>有全局函数sort, 有的容器自带的也有sort, 如果有自带的sort请用自带的</p>
-<p>queue和stack的容器底层实现是用deque, 因为deque功能更强大, 所以很多人把它们(stack和queue)称为容器的适配器(Container Adapters)</p>
+<p><img alt="image-20230215014846592" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150148623.png" /></p>
+<h2 id="4">4. 正态总体参数的区间估计</h2>
+<p><em>参考了<a href="https://www.yuque.com/isshikixiu/notes/unq14p">一个大佬的笔记</a></em></p>
+<p><img alt="image-20230215015616102" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150156143.png" /></p>
+<p><img alt="image-20230215015632976" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150156015.png" /></p>
+<p><img alt="image-20230215015651221" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202302150156249.png" /></p>
 
 
 
@@ -1393,12 +1422,12 @@ int main()
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
