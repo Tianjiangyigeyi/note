@@ -306,7 +306,7 @@ inline String& String::operator=(const String& str)
   }
   ```
 
-  - 对于构造和析构,同样遵循**构造由内而外,析构由外而内 **原则
+  - 对于构造和析构,同样遵循**构造由内而外,析构由外而内 **原则(*derived在外, base在内*)
 
     > 需要特别注意的是,*base* *class(*父类)的*dtor*必须是*virtual*否则会出现*undefined behavior*.
 

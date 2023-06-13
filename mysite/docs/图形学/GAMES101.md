@@ -913,7 +913,7 @@ Irradiance就是对各个方向的Radiance的积分
 
 ##### 双向反射分布函数(BRDF)
 
-通俗定义: 微小面积$dA$从某一个微小立体角$d\omega_i$接收到的irradiance会反射多少到各个不同的立体角上去
+通俗定义: 微小面积$dA$从某一个微小立体角$d\omega_i$接收到的irradiance会反射多少radiance到各个不同的立体角上去
 
 ![image-20230510210239010](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305102102148.png)
 
@@ -940,3 +940,357 @@ $$L_{o}\left(p, \omega_{o}\right)=L_{e}\left(p, \omega_{o}\right)+\int_{\Omega^{
 其中$(n\cdot \omega_i)=\cos\theta_i$
 
 ![image-20230510213657986](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305102136083.png)
+
+
+
+### 蒙特卡洛积分(Monte Carlo integration)
+
+一个用来求定积分的方法, 不关心函数的解析式是如何的, 只需要能算出积分的结果即可
+
+**基本思想**: 在积分域上随机取样, 把整个积分域当成是一个长方形计算出积分结果, 把所有取样的积分结果求平均
+
+$$\int f(x)dx=\frac{1}{N}\sum^{N}_{i=1}\frac{f(X_i)}{p(X_i)},\ X_i\sim p(x)$$
+
+其中p(x)是pdf(概率密度函数)
+
+好处是不用管积分域了, 因为概率密度函数就限定了积分域
+
+
+
+渲染方程两大难点: 
+
+1. 积分的计算$\rightarrow$蒙特卡洛积分
+2. 递归的计算
+
+
+
+引进蒙特卡洛积分之后, 渲染方程为约等于:
+
+$$L_{o}\left(p, \omega_{o}\right)=L_{e}\left(p, \omega_{o}\right)+\frac{1}{N} \sum_{i=1}^{N}\frac {L_{i}\left(p, \omega_{i}\right) f_{r}\left(p, \omega_{i}, \omega_{o}\right)\left(n \cdot \omega_{i}\right)}{p(\omega_i)}$$
+
+故可作伪代码: 
+
+(只考虑非光源)
+
+```pseudocode
+shade(p, wo)
+	Randomly choose N direction wi~pdf
+	Lo = 0.0
+	For each wi
+		Trace a ray r(p, wi)
+		If ray r hit the light
+			Lo += (1 / N) * L_i * f_r * cosine / pdf(wi)
+        Else If ray r hit an object at q
+        	Lo += (1 / N) * shade(q, -wi) * f_r * cosine / pdf(wi)
+    Return Lo
+```
+
+但此方法有两个很严重的弊端
+
+1. 光线数量爆炸: 它的开销是N的指数级增长, 我们想要让他不是指数级增长, 我们可以让**N=1**, 这就是**路径追踪**的思想
+2. 停不下来: **俄罗斯轮盘赌**
+
+### 路径追踪
+
+路径追踪由于N=1, 生成的图片总是很noisy, 虽然规定了光反射的光束为1条, 但是pixel可以向不同方向发出光线, 即发出不同的path, 再求平均即可
+
+
+
+![image-20230511152752422](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305111527642.png)
+
+如果光源很小, 可能要发出很多条path才能碰到光源停止递归
+
+为了解决这个问题, 我们可以在光源上采样
+
+![image-20230511152942927](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305111529037.png)
+
+![image-20230511153136572](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305111531678.png)
+
+![Untitled](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305111539109.png)
+
+
+
+## 材质与外观(Materials and Appearance)
+
+Material == BRDF, 材质决定了光如何被反射
+
+- 漫反射: 
+
+  - 出射的radiance是均匀的$\rightarrow f_r=c(常量)$, 且反射前后irradiance不变 
+
+  - 由反射方程可以计算出$f_r=\frac{\rho}{\pi}$
+  - ![image-20230512121603789](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305121216761.png)
+
+- 光泽材质(Glossy material)
+  - ![image-20230512121742991](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305121217074.png)
+  - ![image](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305121218267.png)
+
+- Ideal reflective / refractive material(BSDF*)
+  - 同时具有反射和折射, $BSDF=BRDF+BTDF$
+
+菲涅尔项: 
+
+- 反射率取决于入射角, 和normal法线方向越接近则越少的光被反射
+
+
+
+### 微表面材质(Microfacet Material)
+
+基于如下假设：离得足够远的时候，微小的东西往往看不见，看见的是最后汇聚起来总体的样子, 即**远处看材质, 近处看几何**
+
+![image-20230512122537955](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305121226022.png)
+
+- F: 菲涅尔项, 确定有多少能量将会被反射
+- G: 修正微表面可能会互相遮挡的情况, 如正面看球, 球的边缘部分
+- D: 微表面法线的分布情况, 分布得比较集中则镜面, 分布得分散则磨砂(h是半程向量)
+
+
+
+### 再谈BRDF
+
+**各向同性:** BRDF在不同的方位角保持一致
+
+**各向异性**: 方位角不一样时，BRDF不保持一致(这里所说的方位角是指相对方位角)
+
+- ![image-20230512155320352](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131224301.png)
+
+
+
+#### **BRDF的属性**: 
+
+- 非负
+- 线性可加
+- 可逆
+- 能量守恒
+
+ 
+
+#### 如何测量BRDF
+
+Motivation:
+
+- Avoid need to develop / derive models 不用费力推模型
+  - Automatically includes all of the scattering effects present
+- Can accurately render with real-world materials
+  - Useful for product design, special effects, ...
+- 实际和推算出来的经常会有很大差距
+
+
+
+## 颜色和感知(color and perception)
+
+### 光场(Light Field / Lumigraph)
+
+**透镜成像**：三维物体到二位平面的投影。
+
+三维到二维的投影，会损失一个维度的信息，这个维度常称为深度轴。实际上相机捕获的是场景空间中光线的辐照度信息。那么光线的方向信息也会丢失，也就失去了深度信息。
+
+即，光学透镜成像对三维场景压缩、投影：
+
+- 光线方向信息丢失
+- 场景的深度信息丢失
+
+为了解决上面的问题, 我们可以使用**光场成像**
+
+- 光场：是记录了空间中光线的集合，包含光线在空间中的位置和角度信息。
+
+- 光场的发展可以描述如下：
+- Adelson EH等用七维**全光函数**$P(\theta,\phi,\lambda,t,V_X,V_Y,V_Z)$描述了空间中的光场，七维全光函数过于复杂、数据量大，难以记录以及存储。需要对其进行简化处理。McMillan L 等将维度降到了五维$P(x,y,z,\theta, \phi)$，通过记录RGB来简化波长  ，通过记录不同帧以简化时间 t。五维光场还可以被进一步简化，进而发展出适用于光学系统的光场双平面参数化表征，即**四参数光场**$P(u,v,s,t)$。假设一条光线在两个不共面的平面($u,v$)和平面($s,t$)各有一个交点，则该光线可以用这两个交点唯一表示。Ng R 引入图像的坐标 ($x,y$) ，形成四参数光场 $P(u,v,x,y)$ 表示形式。双平面四参数光场可以表示成像所需要的所有光线，因此光场的理论研究和成像系统的设计大多数都以光场双平面模型为基础展开。
+
+- **全光函数**: 我们能看到的所有东西$P(\theta,\phi,\lambda,t,V_X,V_Y,V_Z)$
+  - $\theta,\phi$: 对应球面极坐标下的$\theta,\phi$, 共同表示一个球面
+  - $\lambda$: 光的波长, 反映了颜色
+  - $t$: 时间
+  - $V_X,V_Y,V_Z$: 观察的位置
+
+- 最大的优势是可以先拍照再调整参数 :
+  - ![image-20230513135134570](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131351670.png)
+
+
+
+### 颜色
+
+#### SPD(Spectral Power Distribution 光谱功率分布)
+
+- ![image-20230513135830532](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131358640.png)
+
+- 具有线性可加性
+
+颜色是人的一种感知(perception)而不是光的固有属性, 光线投射到人的眼睛里, 经过人眼里的三种对不同波长的光敏感的细胞, 分别将三个属性值(S, M, L)返回大脑, 人脑才能知道光线
+
+- 那么, 有没有一种可能是人脑处理不同的光线得到相同的(S, M, L)呢? 答案是有可能, 这就叫做同色异谱现象
+  - 意义: 可以用不同的光谱表现物体, **只要能骗过人的眼睛**
+
+
+
+#### 颜色如何混合?
+
+- 计算机里常用**"加色系统"**: 即RGB可加
+- 然而由于RGB三种颜色是三种固定的波长, 那么光谱也只有固定的三根线, 无法形成自然界那种连续的光谱, 这就导致了有一些颜色无法显示, 为此, 我们引入CIE RGB, 即使用一个匹配函数来辅助生成颜色
+  - ![image-20230513141514369](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722216.png)
+
+
+
+#### 颜色空间
+
+> 不太懂, 以后懂了再补上
+
+![image-20230513141929767](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722217.png)
+
+
+
+## 动画(Animation)
+
+### 关键帧
+
+影响动画整体走向的帧, 中间的称为过渡帧, 可以通过计算生成过渡帧(通过插值)
+
+![image-20230513150723794](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722218.png)
+
+
+
+### 物理模拟
+
+只要能够正确建立物理模型，一定可以得出正确的物理模拟结果。
+
+#### 质点弹簧系统
+
+- **理想化弹簧:** ![unti](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722224.png)
+- **正常有长度的弹簧**![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722892.png)
+- **引入阻尼**![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722420.png)
+
+弹簧结构： 不同弹簧的组合，会有不同的性质，可以模拟不同的物品。
+
+布料模拟推导过程
+
+| 序号 | 结构                                                         | 说明                                                         |
+| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 0    | ![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722545.png) | 不能模拟布料，因为它不具备布的特性（不能抵抗切力、不能抵抗对折力（布料多少有点抵抗对折的能力，因为它不能像纸一样被折叠）） |
+| 1    | ![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722696.png) | 改进了一点，虽然能抵抗图示对角线的切力，但是存在各向异性。依然不能抵抗折叠。 |
+| 2    | ![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722206.png) | 可以抵抗切力，有各向同性，不抗对折                           |
+| 3    | ![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722938.png) | 红色skip connection，注意红线的力比较小。现在可以比较好的模拟布料 |
+
+​		
+
+### 粒子系统
+
+- 建模一堆微小粒子，定义每个粒子会受到的力(粒子之间的力、来自外部的力、碰撞等)
+- 在游戏和图形学中非常流行，很好理解、实现
+
+
+
+**最简单的实现算法**
+
+- 动画的每一帧
+  - 创建新的粒子（如果需要）
+  - 计算每个粒子的受力
+  - 更新每个粒子的位置和速度
+  - 结束某些粒子生命（如果需要）
+  - 渲染
+
+
+
+### 运动学
+
+可以粗分为正向运动学和逆运动学
+
+- 正向运动学: 只要定义好骨骼连接方式, 知道角度即可计算出点的位置
+- 逆运动学: 创作者只需要调整点的位置, 自动计算出旋转角度, 优点是不用计算复杂的物理, 缺点是解不唯一
+
+
+
+### 动画绑定(Rigging)
+
+某种程度上说是逆运动学的应用, 有点像提线木偶, 捏脸?
+
+![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131637448.png)
+
+
+
+### 动作捕捉(motion capture)
+
+既然可以通过点控制动画, 那么我可以捕捉人的实际动作, 并反映到动画里
+
+**优点**:
+
+- 快速获得大量真实数据
+- 非常真实
+  缺点
+- 昂贵、准备工作麻烦
+- 捕捉的动画跟预期艺术需要不太符合，需要调整
+- 控制点被遮挡问题
+
+
+
+### 单粒子模拟
+
+学习单个粒子的运动，之后再推广到多粒子系统
+
+- 假设粒子的运动由速度矢量场决定，速度场是关于位置和时间的函数：v(x, t)
+- 速度场：定义质点在任何时刻在场中任何位置的速度。给个位置和时间，就能知道速度
+- 如下图，箭头方向是速度方向，曲线是粒子在这个速度场中的运动轨迹（粒子0时刻位置知道，以后每个时刻速度都根据速度场进行变化，由于速度变化，位置也会跟随时间产生变化，从而形成的轨迹）
+  ![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722626.png)
+
+### 常微分方程
+
+已知速度，建立方程，解常微分方程就可以得到位置量
+
+![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722341.png)
+
+### 欧拉方法
+
+- 用上一时刻的信息推导这一时刻的信息(显式欧拉/前向欧拉)
+- 用下一时刻的信息推导这一时刻的信息(隐式欧拉/后向欧拉)
+- 很常用、非常不准确、非常不稳定
+
+![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722599.png)
+
+#### 可以用什么方法消除不稳定性?
+
+- 中点方法
+- 自适应步长
+- 龙格库塔方法(Runge-Kutta)
+
+
+
+### 刚体模拟
+
+模拟刚体很简单
+
+- 刚体不会发生形变
+- 类似于粒子系统，刚体相当于内部所有粒子以相同方式运动
+- 不同的是刚体的模拟中，会考虑更多的属性
+- 有以下属性，可以根据前面提到的欧拉方法或者各种其他稳定性好的方法得出经过Δt以后的位置、角度等信息
+
+![在这里插入图片描述](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131722513.png)
+
+### 流体模拟
+
+通过形成一些小球，通过它们的位置来模拟水和浪花。基于位置的方法不是物理的，没有能量损失，虽然可以人为的加入能量衰减
+**主要思想**
+
+- 水是由一个个刚体小球组成的
+- 水不能被压缩
+- 任何一个时刻，某个位置的密度发生变化（不同于平静水时该空间的小球的密度），就必须通过移动小球的位置进行**密度修正**
+- 需要知道任何一个位置的密度梯度（这是机器学习的梯度下降）
+- **gradient descent梯度下降**
+
+
+
+### 欧拉 vs 拉格朗日 (Eulerian vs Lagrangian)
+
+拉格朗日方法又叫质点法
+
+欧拉法又叫网格法(和上面解常微分方程的欧拉方法无关)
+
+![image-20230513172704766](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305131727852.png)
+
+
+
+#### **Mterial Point Method（MPM）**
+
+把欧拉法和拉格朗日法混合在一起
+
+- 拉格朗日法：考虑每个粒子都带有一些材质属性
+- 欧拉法：用网格做数值积分处理
+- 混合：粒子把属性传给网格，网格计算处理更新后返还给粒子
