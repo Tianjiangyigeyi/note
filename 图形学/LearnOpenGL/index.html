@@ -428,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/git/" class="md-nav__link">
+      <a href="../../其他资料/git.md" class="md-nav__link">
         git
       </a>
     </li>
@@ -687,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E8%8C%83%E5%BC%8F/" class="md-nav__link">
+      <a href="../../主干课程/范式.md" class="md-nav__link">
         DB
       </a>
     </li>
@@ -1373,53 +1373,53 @@
 /*当用户调整窗口的尺寸的同时必须要调整视口的尺寸与之对应,不然不会出现合适的渲染结果*/
 void frambuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-glViewport(0,0,width,height);
+    glViewport(0,0,width,height);
 }
 /*判断用户是否按下esc键,如果按下则setwindowshouldclose*/
 void ProcessInput(GLFWwindow* window)
 {
-if(glfwGetKey(window, GLFW_KEY_ESCAPE)){
-    glfwSetWindowShouldClose(window, true);
-}
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE)){
+        glfwSetWindowShouldClose(window, true);
+    }
 }
 
 int main()
 {
-glfwInit();//初始化glfw库,GLFW 的主要功能是创建并管理窗口和 OpenGL 上下文
-glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);//设置glfw的版本号3.3(major)
-glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//设置glfw的版本号3.3(minor)
-glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);//设置核心模式,不兼容旧函数
-GLFWwindow* window = glfwCreateWindow(WIDTH,HEIGHT,&quot;just try&quot;, NULL, NULL);//创建一个窗口
-glfwMakeContextCurrent(window);//将window窗口设置为Current
-gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);//初始化GLAD,GLAD的作用是管理OpenGL的函数指针
-glViewport(0, 0, WIDTH, HEIGHT);//告诉OpenGL视口的尺寸(像素的个数为WIDTH * HEIGHT)
-glfwSetFramebufferSizeCallback(window, frambuffer_size_callback);//注册回调函数framebuffer_size_callback
+    glfwInit();//初始化glfw库,GLFW 的主要功能是创建并管理窗口和 OpenGL 上下文
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);//设置glfw的版本号3.3(major)
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);//设置glfw的版本号3.3(minor)
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);//设置核心模式,不兼容旧函数
+    GLFWwindow* window = glfwCreateWindow(WIDTH,HEIGHT,&quot;just try&quot;, NULL, NULL);//创建一个窗口
+    glfwMakeContextCurrent(window);//将window窗口设置为Current
+    gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);//初始化GLAD,GLAD的作用是管理OpenGL的函数指针
+    glViewport(0, 0, WIDTH, HEIGHT);//告诉OpenGL视口的尺寸(像素的个数为WIDTH * HEIGHT)
+    glfwSetFramebufferSizeCallback(window, frambuffer_size_callback);//注册回调函数framebuffer_size_callback
 
-//Render loop
-while(!glfwWindowShouldClose(window))
-{
-    //输入------------------------------
-    ProcessInput(window);
+    //Render loop
+    while(!glfwWindowShouldClose(window))
+    {
+        //输入------------------------------
+        ProcessInput(window);
 
-    //渲染指令--------------------------
-    glClearColor(0.2f,0.3f,0.3f,1.0f);//设置用什么颜色清空屏幕
-    glClear(GL_COLOR_BUFFER_BIT);//清楚指定的缓冲(这里是颜色缓冲)
+        //渲染指令--------------------------
+        glClearColor(0.2f,0.3f,0.3f,1.0f);//设置用什么颜色清空屏幕
+        glClear(GL_COLOR_BUFFER_BIT);//清楚指定的缓冲(这里是颜色缓冲)
 
 
-    //检查并调用事件,交换缓冲------------
+        //检查并调用事件,交换缓冲------------
 
-    /*检查是否触发事件(比如键盘输入,鼠标移动等),更新窗口状态,并调用回调函数*/
-    glfwPollEvents();
-    /**
-     * 为了避免图像闪烁的问题,使用双缓冲
-     * 前缓冲保存着最终输出的图像，它会在屏幕上显示；而所有的的渲染指令都会在后缓冲上绘制
-     * 这个函数的作用就是交换前缓冲和后缓冲
-     */
-    glfwSwapBuffers(window);
-}
+        /*检查是否触发事件(比如键盘输入,鼠标移动等),更新窗口状态,并调用回调函数*/
+        glfwPollEvents();
+        /**
+         * 为了避免图像闪烁的问题,使用双缓冲
+         * 前缓冲保存着最终输出的图像，它会在屏幕上显示；而所有的的渲染指令都会在后缓冲上绘制
+         * 这个函数的作用就是交换前缓冲和后缓冲
+         */
+        glfwSwapBuffers(window);
+    }
 
-glfwTerminate();//结束进程,回收内存
-return 0;
+    glfwTerminate();//结束进程,回收内存
+    return 0;
 }
 </code></pre>
 <h2 id="_2">你好,三角形!</h2>
