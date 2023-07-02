@@ -1,4 +1,6 @@
-site_name: bk's notebook
+site_name: bk's Notebook
+site_author: bk
+
 
 nav:
   - 主页: README.md
@@ -18,7 +20,7 @@ nav:
           - 第八章: 主干课程/概率论与数理统计/20230215.md
       - 普通物理学2: 主干课程/普通物理学2/普物2.md
       - 计组期中复习: 主干课程/计组.md
-      - DB: 主干课程/范式.md
+      - DB: 主干课程/DB.md
       - ADS: 主干课程/ads.md
   - LeetCode刷题笔记:
       - 动态规划: LeetCode刷题笔记/动态规划.md
@@ -39,6 +41,7 @@ nav:
       - c++面向对象程序设计: 跟侯捷学cpp/c++面向对象程序设计.md
       - 兼谈对象模型: 跟侯捷学cpp/兼谈对象模型.md
       - c++标准库体系结构与内核分析: 跟侯捷学cpp/c++标准库体系结构与内核分析.md
+      - 关于“虚”的思考: 跟侯捷学cpp/虚.md
 theme:
   name: material
   icon:
@@ -62,8 +65,8 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
-repo_url: https://github.com/Tianjiangyigeyi
-repo_name: Tianjiangyigeyi
+repo_url: https://github.com/Tianjiangyigeyi/note
+repo_name: Tianjiangyigeyi/note
 
 markdown_extensions:
   - pymdownx.arithmatex:
