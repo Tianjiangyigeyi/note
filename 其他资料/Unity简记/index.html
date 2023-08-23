@@ -11,17 +11,17 @@
       
       
       
-        <link rel="prev" href="../%E6%80%8E%E6%A0%B7%E9%83%A8%E7%BD%B2%E5%88%B0Github/">
+        <link rel="prev" href="../csharp/">
       
       
-        <link rel="next" href="../Unity%E7%AE%80%E8%AE%B0/">
+        <link rel="next" href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230202/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
     
     
       
-        <title>c# - bk's Notebook</title>
+        <title>Unity - bk's Notebook</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#c" class="md-skip">
+        <a href="#unity" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              c#
+              Unity
             
           </span>
         </div>
@@ -430,6 +430,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../csharp/" class="md-nav__link">
+        c#
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -441,24 +455,41 @@
         
       
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        c#
-      </a>
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unity
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Unity%E7%AE%80%E8%AE%B0/" class="md-nav__link">
+      <a href="./" class="md-nav__link md-nav__link--active">
         Unity
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unity_1" class="md-nav__link">
+    Unity 生命期
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1383,6 +1414,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unity_1" class="md-nav__link">
+    Unity 生命期
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1400,74 +1446,17 @@
 
 
 
-<h1 id="c">C</h1>
-<hr />
-<p>入门自</p>
-<p><a href="https://www.bilibili.com/video/BV1sy4y1u7cw/?p=1">01 基础类型，变量，函数_哔哩哔哩_bilibili</a></p>
-<ol>
-<li><code>class</code>:都是引用类型(被函数调用时直接访问地址对应的值),分配在<strong>堆</strong></li>
-</ol>
-<p><code>csharp
-   class myclass
-   {
-    public int x;
-       protected double y;
-       ...
-   }</code></p>
-<ol>
-<li>
-<p><code>struct</code>:值类型(被函数调用时拷贝一个struct,不会影响原来那个struct的值),分配在<strong>栈</strong>,也可以有变量和函数, <code>ref</code>可以传递引用</p>
-</li>
-<li>
-<p><code>interface</code>:函数的集合,告诉别人有哪些函数可以供使用</p>
-</li>
-</ol>
-<p><code>csharp
-   interface A
-   {
-    void Func();
-   }</code></p>
-<ol>
-<li><code>继承</code>: 同c++的继承思想,</li>
-</ol>
-<p><code>csharp
-   class B : A
-   {
-    ...
-   }</code></p>
-<ol>
-<li>
-<p><code>abstract</code>:抽象类,不可被实例化,因为由部分未实现的函数,等待子类去实现</p>
-</li>
-<li>
-<p><code>函数的覆盖</code>: virtual override 子类重写</p>
-</li>
-<li>
-<p>子类可以调用protected</p>
-</li>
-<li>
-<p>所有类型都有基类<code>System.Object</code>, <code>ToString()</code>函数可以重写</p>
-</li>
-<li>
-<p>泛型<code>&lt;T&gt;</code>可以用于类或函数，使用<code>where</code> 进行约束</p>
-</li>
-<li>容器:<ul>
-<li>动态数组: <code>List</code>可动态增长</li>
-<li>字典: <code>Dictionary</code> Key-Value对，用于查询</li>
-<li>Hash集合: <code>Hashset</code>保证数据的唯一</li>
-<li>栈:<code>Stack</code> Push Pop 后进先出</li>
-<li>队列: <code>Queue</code> Enqueue Dequeue 先进先出</li>
+<h1 id="unity">Unity简记</h1>
+<h2 id="unity_1">Unity 生命期</h2>
+<ul>
+<li>AWake：有且仅有一次</li>
+<li>OnEnable：enabled变为true可以多次</li>
+<li>Start：active&amp;&amp;enabled有且仅有一次</li>
+<li>Update：每帧更新</li>
+<li>LateUpdate：在所有脚本都update之后才调用</li>
+<li>OnDisable：enabled变为false时候会调用</li>
+<li>OnDestroy：被销毁时会调用、即!active也会调用（前提是调用过Awake）</li>
 </ul>
-</li>
-<li>函数指针: <code>delegate</code>可以存储函数，使用+=-= 增删，本质上是监听者模式<ul>
-<li><code>Action&lt;T1T2&gt;</code> 无返回值的delegate</li>
-<li><code>Func&lt;T1,T2,TResult&gt;</code> 有返回值的delegate，返回值类型为TResult</li>
-</ul>
-</li>
-<li>属性 <code>Attribute</code>,可以给类，变量，函数 添加额外的代码信息，配合反射使用</li>
-<li>反射:获取代码信息，可以获取一个程序集，类，函数，变量等信息，使用 <code>obiect.GetType()</code>或<code>typeof(T)</code>来获取类型信息</li>
-<li>宏:条件编译，通过定义宏来切换代码开关#if #else #endif #define #undef</li>
-</ol>
 
 
 
