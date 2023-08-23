@@ -1,4 +1,4 @@
-# GAMES101
+# 	GAMES101
 
 ---
 
@@ -551,10 +551,16 @@ $$重心(x,y)=\alpha A+\beta B+\gamma C,\  \alpha+\beta+\gamma=1$$
 
 - example: **sphere**: all points in 3D, where $x^2+y^2+z^2=1$
   - more generally: f(x,y,z) = 0
+  
 - ![image-20230419134233948](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202304191342081.png)
+
 - 距离函数(distance function)
   - SDF(signed distance field)
+  
+    ![image-20230802162126801](C:\Users\huangshengy\AppData\Roaming\Typora\typora-user-images\image-20230802162126801.png)
+  
 - level sets(水平集)
+
 - Fractals(分形)
 
 **Explicit(显式)**
@@ -923,7 +929,7 @@ Irradiance就是对各个方向的Radiance的积分
 
 $$L_r(p,\omega_r)=\int_{H^2}f_r(p,\omega_r\rightarrow \omega_i)L_i(p,\omega_i)\cos\theta_id\omega_i$$
 
-后面三项$L_i(p,\omega_i)\cos\theta_id\omega_i$可以看出是单位面积dA中收到的所有irradiance
+后面三项$L_i(p,\omega_i)\cos\theta_id\omega_i$积分的可以看出是单位面积dA中收到的所有irradiance
 
 ![image-20230510211024419](https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202305102110511.png)
 
