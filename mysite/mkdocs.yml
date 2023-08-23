@@ -7,7 +7,7 @@ nav:
   - 其他资料:
       - 怎样部署到github: 其他资料/怎样部署到Github.md
       - c#: 其他资料/csharp.md
-      - git: 其他资料/git.md
+      - Unity: 其他资料/Unity简记.md
   - 主干课程:
       - 概率论与数理统计:
           - 第一章: 主干课程/概率论与数理统计/20230202.md
@@ -30,18 +30,32 @@ nav:
       - 3.无重复字符的最长子串(medium): LeetCode刷题笔记/3无重复字符的最长子串.md
       - 4.寻找两个正序数组的中位数(hard): LeetCode刷题笔记/4寻找两个正序数组的中位数.md
       - 5.最长回文子串(medium): LeetCode刷题笔记/5最长回文子串.md
-      - 10.正则表达式匹配(hard): LeetCode刷题笔记/10正则表达式匹配.md
-      - 11.盛最多水的容器(medium): LeetCode刷题笔记/11盛最多水的容器.md
-      - 15.三数之和(medium): LeetCode刷题笔记/15三数之和.md
+      - 6.正则表达式匹配(hard): LeetCode刷题笔记/6正则表达式匹配.md
+      - 7.盛最多水的容器(medium): LeetCode刷题笔记/7盛最多水的容器.md
+      - 8.三数之和(medium): LeetCode刷题笔记/8三数之和.md
+      - 9.电话号码的字母组合(medium): LeetCode刷题笔记/9电话号码的字母组合.md
+      - 10.删除链表的倒数第 N 个结点(medium): LeetCode刷题笔记/10删除链表的倒数第 N 个结点.md
+      - 11.有效的括号(easy): LeetCode刷题笔记/11有效的括号.md
+      - 12.合并两个有序链表(easy): LeetCode刷题笔记/12合并两个有序链表.md
+      - 13.括号生成(medium): LeetCode刷题笔记/13括号生成.md
+      - 14.合并 K 个升序链表(hard): LeetCode刷题笔记/14合并 K 个升序链表.md
+      - 15.下一个排列(medium): LeetCode刷题笔记/15下一个排列.md
+      - 16.最长有效括号(hard): LeetCode刷题笔记/16最长有效括号.md
+      - 17.搜索旋转排序数组(medium): LeetCode刷题笔记/17搜索旋转排序数组.md
+      - 18.在排序数组中查找元素的第一个和最后一个位置(medium): LeetCode刷题笔记/18在排序数组中查找元素的第一个和最后一个位置.md
   - 图形学:
       - SSR算法小记: 图形学/SSR算法小记(Screen-Space-Reflection).md
       - OpenGL: 图形学/LearnOpenGL.md
       - GAMES101: 图形学/GAMES101.md
+      - GAMES202: 图形学/GAMES202.md
   - 侯捷cpp:
       - c++面向对象程序设计: 跟侯捷学cpp/c++面向对象程序设计.md
       - 兼谈对象模型: 跟侯捷学cpp/兼谈对象模型.md
       - c++标准库体系结构与内核分析: 跟侯捷学cpp/c++标准库体系结构与内核分析.md
       - 关于“虚”的思考: 跟侯捷学cpp/虚.md
+  - 一些思考:
+      - 英雄联盟的同步机制: 关于游戏的思考/英雄联盟是状态同步.md
+
 theme:
   name: material
   icon:
