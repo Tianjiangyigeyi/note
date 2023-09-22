@@ -93,3 +93,38 @@ STL的容器基本上都是采用的"前闭后开"区间, 即begin是头, end是
 
 
 常规进行内存分配使用`malloc/free`时, 除了你定义的`size`还要有一部分的空间作为cookie, (你需要知道malloc的内存的大小), 最基础的分配器就是调用malloc和free, 但是我们可以想到, 对于一个容器进行malloc时, 并不需要每一个元素都有一个cookie(因为他们的大小总是确定好了的), 可以一下分配一大块, 再在内部切割, 这样可以省下很多内存
+
+
+
+---
+
+这里是一些速通：
+
+- list：双向链表，有一个占位的空节点，end指向它，适合增删场景，不支持下标访问
+
+- vector：内存中连续，支持下标访问，有capacity和size，一般两倍扩容
+
+- array：简单封装，甚至没有构造与析构函数，目的是将数组与stl的一些算法兼容
+
+- deque：双端队列，有一个叫做map的成员，是一个T**类型，为控制中心，指向一个个buffer。deque在内存中片段连续，但是由于控制中心的存在，对使用者连续
+
+- queue和stack：deque的适配器（底层容器是deque），由于queue和stack的进出是严格有序的，所以内部没有定义迭代器。实际上queue和stack的底层容器是可以自己决定的，queue和stack的底层容器也可以指定为list;stack的底层容器也可以指定为vector，这些容器都实现queue和stack内部用到的方法。就算指定了错误的容器，只要没有调用不支持的方法，仍能编译通过，说明编译器在处理模板是不会进行全面的检查
+
+- rb_tree：红黑树的封装，是有序容器，提供了迭代器，但不应该使用迭代器来直接改变元素值，提供了两种插入操作insert_unique和insert_equal
+
+- set和multiset：以rb_tree为底层容器，排序的依据是key，set和multiset的key和value保持一致。由于set必须保证key独一无二，所以插入时调用的是rb_tree的insert_unique，在插入重复key时会插入失败，而multiset可以使用insert_equal
+
+- map和multimap：类似set与multiset，只是key和value不必保持一致
+
+- hashtable：最开始只有53个桶,当元素个数大于桶的个数时,桶的数目扩大为最接近当前桶数两倍的质数,实际上,桶数目的增长顺序被写死在代码里:
+
+  ```cpp
+  static const unsigned long __stl_prime_list[__stl_num_primes] = {
+          53, 97, 193, 389, 769, 1543, 3079, 6151, 12289, 24593,
+          49157, 98317, 196613, 393241, 786433, 1572869, 3145739,
+          6291469, 12582917, 25165843, 50331653, 100663319,
+          201326611, 402653189, 805306457, 1610612741,
+          3221225473ul, 4294967291ul};
+  ```
+
+- unordered_set, unordered_multiset, unordered_map, unordered_multimap：用法与不带unordered前缀的类似，只不过底层实现是一个hashtable

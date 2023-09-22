@@ -1,0 +1,2284 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="bk">
+      
+      
+      
+        <link rel="prev" href="../GAMES101/">
+      
+      
+        <link rel="next" href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
+    
+    
+      
+        <title>GAMES202 - bk's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#games202" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="bk&#39;s Notebook" class="md-header__button md-logo" aria-label="bk's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            bk's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GAMES202
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Tianjiangyigeyi/note" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tianjiangyigeyi/note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/%E6%80%8E%E6%A0%B7%E9%83%A8%E7%BD%B2%E5%88%B0Github/" class="md-tabs__link">
+        其他资料
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230202/" class="md-tabs__link">
+        主干课程
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-tabs__link">
+        LeetCode刷题笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SSR%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0%28Screen-Space-Reflection%29/" class="md-tabs__link md-tabs__link--active">
+        图形学
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-tabs__link">
+        侯捷cpp
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F%E7%9A%84%E6%80%9D%E8%80%83/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F%E6%98%AF%E7%8A%B6%E6%80%81%E5%90%8C%E6%AD%A5/" class="md-tabs__link">
+        一些思考
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="bk&#39;s Notebook" class="md-nav__button md-logo" aria-label="bk's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    bk's Notebook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Tianjiangyigeyi/note" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tianjiangyigeyi/note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          其他资料
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          其他资料
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/%E6%80%8E%E6%A0%B7%E9%83%A8%E7%BD%B2%E5%88%B0Github/" class="md-nav__link">
+        怎样部署到github
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/csharp/" class="md-nav__link">
+        c#
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/Unity%E7%AE%80%E8%AE%B0/" class="md-nav__link">
+        Unity
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          主干课程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          主干课程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          概率论与数理统计
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          概率论与数理统计
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230202/" class="md-nav__link">
+        第一章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230203/" class="md-nav__link">
+        第二章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230204/" class="md-nav__link">
+        第三章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230205/" class="md-nav__link">
+        第四章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230206/" class="md-nav__link">
+        第五章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230213/" class="md-nav__link">
+        第六章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230214/" class="md-nav__link">
+        第七章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230215/" class="md-nav__link">
+        第八章
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A62/%E6%99%AE%E7%89%A92/" class="md-nav__link">
+        普通物理学2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E8%AE%A1%E7%BB%84/" class="md-nav__link">
+        计组期中复习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/DB/" class="md-nav__link">
+        DB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/ads/" class="md-nav__link">
+        ADS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          LeetCode刷题笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          LeetCode刷题笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="md-nav__link">
+        动态规划
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+        排序
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/1%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
+        1.两数之和(easy)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/2%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" class="md-nav__link">
+        2.两数相加(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/3%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        3.无重复字符的最长子串(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/4%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="md-nav__link">
+        4.寻找两个正序数组的中位数(hard)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/5%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" class="md-nav__link">
+        5.最长回文子串(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/6%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="md-nav__link">
+        6.正则表达式匹配(hard)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/7%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+        7.盛最多水的容器(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/8%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/" class="md-nav__link">
+        8.三数之和(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/9%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/" class="md-nav__link">
+        9.电话号码的字母组合(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/10%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%AC%20N%20%E4%B8%AA%E7%BB%93%E7%82%B9/" class="md-nav__link">
+        10.删除链表的倒数第 N 个结点(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/11%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="md-nav__link">
+        11.有效的括号(easy)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/12%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        12.合并两个有序链表(easy)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/13%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/" class="md-nav__link">
+        13.括号生成(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/14%E5%90%88%E5%B9%B6%20K%20%E4%B8%AA%E5%8D%87%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="md-nav__link">
+        14.合并 K 个升序链表(hard)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/15%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/" class="md-nav__link">
+        15.下一个排列(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/16%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/" class="md-nav__link">
+        16.最长有效括号(hard)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/17%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        17.搜索旋转排序数组(medium)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LeetCode%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/18%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/" class="md-nav__link">
+        18.在排序数组中查找元素的第一个和最后一个位置(medium)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          图形学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          图形学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSR%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0%28Screen-Space-Reflection%29/" class="md-nav__link">
+        SSR算法小记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LearnOpenGL/" class="md-nav__link">
+        OpenGL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GAMES101/" class="md-nav__link">
+        GAMES101
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          GAMES202
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        GAMES202
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lecture1-introduce" class="md-nav__link">
+    Lecture1 Introduce
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture2-review" class="md-nav__link">
+    Lecture2 Review
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture3-shadow1" class="md-nav__link">
+    Lecture3 Shadow(1)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture3 Shadow(1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shadow-mapping" class="md-nav__link">
+    Shadow Mapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approximation-in-rtr" class="md-nav__link">
+    Approximation in RTR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcsspercentage-closer-soft-shadows" class="md-nav__link">
+    PCSS（Percentage closer soft shadows)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture4-shadow2" class="md-nav__link">
+    Lecture4 Shadow(2)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture4 Shadow(2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vssm-variance-soft-shadow-mapping" class="md-nav__link">
+    VSSM (Variance soft shadow mapping)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture5-1ibl" class="md-nav__link">
+    Lecture5 环境光照(1)（IBL）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture6-2" class="md-nav__link">
+    Lecture6 环境光照(2)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture6 环境光照(2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spherical-harmonics" class="md-nav__link">
+    球谐函数（Spherical Harmonics）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture7-1" class="md-nav__link">
+    Lecture7 全局光照(1)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture7 全局光照(1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsmreflective-shadow-maps" class="md-nav__link">
+    RSM（Reflective Shadow Maps）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lpvlight-propagation-volumes" class="md-nav__link">
+    LPV（Light Propagation Volumes）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vxgivoxel-global-illumination" class="md-nav__link">
+    VXGI（Voxel Global Illumination）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture8-2" class="md-nav__link">
+    Lecture8 全局光照(2)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture8 全局光照(2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssaoscreen-space-ambient-occlusion" class="md-nav__link">
+    SSAO（Screen Space Ambient Occlusion 屏幕空间环境光遮蔽）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture9-3" class="md-nav__link">
+    Lecture9 全局光照(3)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture9 全局光照(3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssdoscreen-space-directional-occlusion" class="md-nav__link">
+    SSDO（Screen Space Directional Occlusion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssrscreen-space-reflection" class="md-nav__link">
+    SSR（Screen Space Reflection）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture10-1" class="md-nav__link">
+    Lecture10 基于物理的材质(1)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture10 基于物理的材质(1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microfacet-brdf" class="md-nav__link">
+    Microfacet BRDF
+  </a>
+  
+    <nav class="md-nav" aria-label="Microfacet BRDF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f-the-fresnel-term" class="md-nav__link">
+    F : The Fresnel Term 菲涅尔项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-normal-distribution-function" class="md-nav__link">
+    D : Normal Distribution Function 表面分布函数
+  </a>
+  
+    <nav class="md-nav" aria-label="D : Normal Distribution Function 表面分布函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beckmann" class="md-nav__link">
+    beckmann：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ggx" class="md-nav__link">
+    GGX
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-geometry-term" class="md-nav__link">
+    G : Geometry term 自遮挡
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture11-2" class="md-nav__link">
+    Lecture11 基于物理的材质(2)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture12-1" class="md-nav__link">
+    Lecture12 光线追踪(1)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture13-2" class="md-nav__link">
+    Lecture13 光线追踪(2)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          侯捷cpp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          侯捷cpp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        c++面向对象程序设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/%E5%85%BC%E8%B0%88%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        兼谈对象模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E6%A0%87%E5%87%86%E5%BA%93%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%86%85%E6%A0%B8%E5%88%86%E6%9E%90/" class="md-nav__link">
+        c++标准库体系结构与内核分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/%E8%99%9A/" class="md-nav__link">
+        关于“虚”的思考
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          一些思考
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          一些思考
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F%E7%9A%84%E6%80%9D%E8%80%83/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F%E6%98%AF%E7%8A%B6%E6%80%81%E5%90%8C%E6%AD%A5/" class="md-nav__link">
+        英雄联盟的同步机制
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lecture1-introduce" class="md-nav__link">
+    Lecture1 Introduce
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture2-review" class="md-nav__link">
+    Lecture2 Review
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture3-shadow1" class="md-nav__link">
+    Lecture3 Shadow(1)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture3 Shadow(1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shadow-mapping" class="md-nav__link">
+    Shadow Mapping
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approximation-in-rtr" class="md-nav__link">
+    Approximation in RTR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcsspercentage-closer-soft-shadows" class="md-nav__link">
+    PCSS（Percentage closer soft shadows)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture4-shadow2" class="md-nav__link">
+    Lecture4 Shadow(2)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture4 Shadow(2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vssm-variance-soft-shadow-mapping" class="md-nav__link">
+    VSSM (Variance soft shadow mapping)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture5-1ibl" class="md-nav__link">
+    Lecture5 环境光照(1)（IBL）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture6-2" class="md-nav__link">
+    Lecture6 环境光照(2)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture6 环境光照(2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spherical-harmonics" class="md-nav__link">
+    球谐函数（Spherical Harmonics）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture7-1" class="md-nav__link">
+    Lecture7 全局光照(1)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture7 全局光照(1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsmreflective-shadow-maps" class="md-nav__link">
+    RSM（Reflective Shadow Maps）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lpvlight-propagation-volumes" class="md-nav__link">
+    LPV（Light Propagation Volumes）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vxgivoxel-global-illumination" class="md-nav__link">
+    VXGI（Voxel Global Illumination）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture8-2" class="md-nav__link">
+    Lecture8 全局光照(2)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture8 全局光照(2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssaoscreen-space-ambient-occlusion" class="md-nav__link">
+    SSAO（Screen Space Ambient Occlusion 屏幕空间环境光遮蔽）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture9-3" class="md-nav__link">
+    Lecture9 全局光照(3)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture9 全局光照(3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ssdoscreen-space-directional-occlusion" class="md-nav__link">
+    SSDO（Screen Space Directional Occlusion)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssrscreen-space-reflection" class="md-nav__link">
+    SSR（Screen Space Reflection）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture10-1" class="md-nav__link">
+    Lecture10 基于物理的材质(1)
+  </a>
+  
+    <nav class="md-nav" aria-label="Lecture10 基于物理的材质(1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microfacet-brdf" class="md-nav__link">
+    Microfacet BRDF
+  </a>
+  
+    <nav class="md-nav" aria-label="Microfacet BRDF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f-the-fresnel-term" class="md-nav__link">
+    F : The Fresnel Term 菲涅尔项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-normal-distribution-function" class="md-nav__link">
+    D : Normal Distribution Function 表面分布函数
+  </a>
+  
+    <nav class="md-nav" aria-label="D : Normal Distribution Function 表面分布函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beckmann" class="md-nav__link">
+    beckmann：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ggx" class="md-nav__link">
+    GGX
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-geometry-term" class="md-nav__link">
+    G : Geometry term 自遮挡
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture11-2" class="md-nav__link">
+    Lecture11 基于物理的材质(2)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture12-1" class="md-nav__link">
+    Lecture12 光线追踪(1)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecture13-2" class="md-nav__link">
+    Lecture13 光线追踪(2)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="games202">GAMES202 高质量实时渲染</h1>
+<h2 id="lecture1-introduce">Lecture1 Introduce</h2>
+<p>实时：30fps以上 </p>
+<p>Interactive：10fps左右，一秒一帧两秒一帧is also acceptable</p>
+<h2 id="lecture2-review">Lecture2 Review</h2>
+<p><strong>渲染管线</strong>：渲染就是由模型数据变成图像数据的过程，而渲染管线设计就是现在的gpu完成的工作，首先物体在在模型数据中会被表示为一系列的点和其连接关系，我们需要将其加载到gpu的显存中（VBO），然后进行主要的两个阶段，分别是几何阶段和光栅化阶段。</p>
+<ul>
+<li>
+<p>首先是几何阶段，我们需要对顶点进行处理</p>
+</li>
+<li>
+<p>首先使用vertex shader来处理这些顶点，将他们从世界坐标变化到NDC（model-view-projection），我们也可以在这里进行一些信息处理，如光照、阴影等；</p>
+</li>
+<li>
+<p>接下来是曲面细分着色器进行曲面细分（loop算法或者catmull-Clark算法）或者曲面简化（坍缩，二次误差）</p>
+</li>
+<li>
+<p>然后是几何着色器，由于并行化低，这里只适合进行顶点的增删等顶点着色器做不到的事</p>
+</li>
+<li>
+<p>接下来是几何阶段的最后一步，顶点后处理，将ndc中的标准设备坐标转换为屏幕坐标，把顶点信息存入显存中</p>
+</li>
+<li>
+<p>现在开始光栅化阶段</p>
+</li>
+<li>
+<p>第一步图元组装，将顶点连接成面、线</p>
+</li>
+<li>第二步遍历三角形光栅化，将三角形“打散”到像素（片元）里，这里可能会用到插值、抗锯齿</li>
+<li>第三步使用片元着色器，这里有很多功能可以实现，比如Phong/Blinn Phong等光照模型，可以自由地根据顶点数据获得想要的颜色</li>
+<li>第四步混合，进行各种测试，如裁剪测试（选择要渲染的部分）、透明测试（在OpenGL ES3.0中被删除，因为可以在片段着色器上进行）、模板测试（同样是选择要渲染的部分）、深度测试（在某些实现中会使用early-z的方法，即先进行深度测试选择需要的片元，但这又会导致透明物体出现问题，需要一些hack）、透明度混合、抖动</li>
+</ul>
+<p>通过了所有测试片元（像素）也不是直接画到屏幕上去的，其实这些像素可以输出到任何纹理图、缓冲或者屏幕上去，不过直接输出到屏幕不是一个好的做法，因为这样会导致画面撕裂，这就需要进行垂直同步，即输出到一个buffer中，等待buffer完全渲染完毕再交换当前显示的buffer和刚刚渲染好的buffer，这就是所谓双重缓冲。</p>
+<h2 id="lecture3-shadow1">Lecture3 Shadow(1)</h2>
+<h3 id="shadow-mapping">Shadow Mapping</h3>
+<ul>
+<li>两趟（2-pass）算法</li>
+<li>图像空间算法，不需要知道场景中的几何，但会导致自遮挡现象和走样（本质都是shadow map的分辨率太够高）</li>
+</ul>
+<h3 id="approximation-in-rtr">Approximation in RTR</h3>
+<p>在实时渲染中，我们更关心“近似”相等</p>
+<p>实时渲染中一个重要的近似：<span class="arithmatex">\(\int_{\Omega} f(x) g(x) \mathrm{d} x \approx \frac{\int_{\Omega} f(x) \mathrm{d} x}{\int_{\Omega} \mathrm{d} x} \cdot \int_{\Omega} g(x) \mathrm{d} x\)</span></p>
+<p>所以可以把渲染方程里的visibility项单独提出来</p>
+<h3 id="pcsspercentage-closer-soft-shadows">PCSS（Percentage closer soft shadows)</h3>
+<p>软阴影（阴影的界限很模糊）</p>
+<p><strong>PCF</strong>（Percentage Closer Filtering）：最先提出来是为了解决抗锯齿，后来发现在软阴影上也有应用，做法是计算着色点与shadow map中该点深度值的比较的时候，不仅采样该像素点的深度值，同时采样周边多个shadow map点深度值，逐一比较并求平均值，从而获得了一个从0到1的连续分布，能够表现不同明暗程度的阴影。</p>
+<p><strong>PCSS</strong>：不同遮挡物的深度决定不同的Filter size</p>
+<p><img alt="PCF&amp;PCSS实现软阴影——GAMES202学习笔记" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202307311831831.jpeg" /></p>
+<h2 id="lecture4-shadow2">Lecture4 Shadow(2)</h2>
+<p><img alt="image-20230801105918369" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308011059495.png" /></p>
+<h3 id="vssm-variance-soft-shadow-mapping">VSSM (Variance soft shadow mapping)</h3>
+<p>利用正态分布函数来求PCSS中“权”的近似值</p>
+<p>方差可以用公式<span class="arithmatex">\(Var(X)=E(X^2)-E^2(X)\)</span>，其中<span class="arithmatex">\(X^2\)</span>可以很方便地用shadow map的一个通道存储</p>
+<h2 id="lecture5-1ibl">Lecture5 环境光照(1)（IBL）</h2>
+<p><strong>有向距离场SDF</strong>，可以把定义中的“安全距离”换成“安全角度”即可用于shadow</p>
+<p><img alt="image-20230802180233268" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308021802382.png" /></p>
+<p><img alt="image-20230802180309821" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308021803868.png" /></p>
+<p>该方法叫split sum approximation</p>
+<h2 id="lecture6-2">Lecture6 环境光照(2)</h2>
+<h3 id="spherical-harmonics">球谐函数（Spherical Harmonics）</h3>
+<p>用一系列定义在空间中的二维基函数（只需要两维即可表示   三维空间中的一个方向）去拟合一个三维空间函数</p>
+<p><strong>PRT</strong>(Precomputed Radiance Transfer)：</p>
+<ul>
+<li>
+<p>我们把rendering equation分为两部分,lighting 和 light transport.</p>
+</li>
+<li>
+<p>假设在渲染时场景中只有lighting项会发生变化(旋转,更换光照等),由于lighting是一个球面函数,因此可以用基函数来表示,在预计算阶段计算出lighting.</p>
+</li>
+<li>
+<p>而light transport(visibility和brdf)是不变的,因此相当于对任一shading point来说,light transport项固定的,可以认为是shading point自己的性质,light transport总体来说还是一个球面函数,因此也可以写成基函数形式,是可以预计算出的.</p>
+</li>
+</ul>
+<h2 id="lecture7-1">Lecture7 全局光照(1)</h2>
+<h3 id="rsmreflective-shadow-maps">RSM（Reflective Shadow Maps）</h3>
+<p>本质上还是应用一个shadow map，只不过不只存深度值，还要存世界坐标、法线、flux</p>
+<h3 id="lpvlight-propagation-volumes">LPV（Light Propagation Volumes）</h3>
+<p>Steps:</p>
+<ol>
+<li>知道哪些点作为次级光源(virtual light point)（接受直接光照）</li>
+<li>使用RSM</li>
+<li>注入(inject)到场景中的3D格子中</li>
+<li>划分场景为3D纹理</li>
+<li>遍历每个格子，找到包含在其中的次级光源</li>
+<li>将次级光源的四面八方的radiance加起来，用sh表示（2阶即4个数可表示一个格子）</li>
+<li>传播（propagation)</li>
+<li>一个格子传播到相邻的六个格子中去（<strong>每一个格子都认为是diffuse</strong>）</li>
+<li>同样加起来用sh表示</li>
+<li>重复迭代直到稳定，大概三四次（所以这是一个四趟的算法）</li>
+<li>渲染</li>
+<li>对于每个着色点，找到他所位于的格子</li>
+<li>获取该格子所有入射的radiance</li>
+<li>着色</li>
+</ol>
+<p>问题：当格子划分得比较大时，可能格子内部会有遮挡关系，以至于错误地向所有六个面propagation了，但是若划分得比较小，很大幅增加性能消耗，但是可以自适应格子的大小</p>
+<h3 id="vxgivoxel-global-illumination">VXGI（Voxel Global Illumination）</h3>
+<p>也是两趟的算法，但是与RSM有一些区别：</p>
+<ol>
+<li>次级光源：RSM中是Texel，VXGI中是Voxel</li>
+<li>光线：RSM中是传播（从光源出发），VXGI中是追踪：从相机出发，打到每一个pixel上,根据pixel上代表的物体材质做出不同的操作,如果是glossy则打出一个锥形区域,diffuse则打出若干个锥形区域,打出的锥形区域与场景中一些已经存在的voxel相交,这些voxel对于Shading point的贡献可以算出来,也就是我们要对每一个shading point都做一个cone tracing,可想而知,这个速度比起LPV来说是很慢的,但是是可以优化的,暂且不提.</li>
+</ol>
+<p>具体步骤：</p>
+<ol>
+<li><strong>Light pass</strong>：记录的是直接光源从哪些范围来（绿色部分），记录各个反射表面的法线（橙色部分），通过<strong>输入方向</strong>和<strong>法线范围</strong>两个信息然后通过表面的材质，来准确的算出出射的分布，这样就比LPV认为格子表面是diffuse再用SH来压缩的方法要准确，然后建立更高层级格子的这些特性。</li>
+</ol>
+<p><img alt="img" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308051411807.webp" /></p>
+<ol>
+<li>
+<p><strong>Camera pass</strong>：对于任何一个像素，知道了Camera Ray的方向。</p>
+</li>
+<li>
+<p>对于Glossy的表面，向反射方向追踪出一个锥形(cone)区域；基于追踪出的圆锥面的大小，对格子的层级进行查询，就是对于场景中的所有体素都要判断是不是与这个锥形相交，如果相交的话就要把对于这个点的间接光照的贡献算出来(我们存储了体素的光照输入方向和法线方向,因此可以算出其输出的radiance,将cone区域内所有体素的radiance都算出来从而在shading point得到间接光照)，也就是根据传播出的距离远近找对应层级的体素，然后找覆盖的范围。</p>
+<p><img alt="img" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308051413650.webp" /></p>
+</li>
+<li>
+<p>对于diffuse的情况来说,通常考虑成若干圆锥，忽略圆锥Tracing时的重叠和空隙</p>
+<p><img alt="img" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308051413217.webp" /></p>
+</li>
+</ol>
+<p>总结：</p>
+<p>LPV是把所有的次级光源发出的Radiance传播到了场景中的所有位置，只需要做一次从而让场景每个Voxel都有自己的radiance，但是由于LPV使用的3D网格特性，并且采用了SH进行表示和压缩，因此结果并不准确，而且由于使用了SH因此只能考虑diffuse的,但是速度是很快的。</p>
+<p>VXGI把场景的次级光源记录为一个层次结构，对于一个Shading Point，我们要去通过Corn Tracing找到哪些次级光源能够照亮这个点。</p>
+<h2 id="lecture8-2">Lecture8 全局光照(2)</h2>
+<p><strong>屏幕空间（screen space）</strong></p>
+<p>首先我们介绍一下我们讲了这么多的几种方法都是什么类型的:</p>
+<ul>
+<li>LPV和VXGI是属于在3D空间的GI</li>
+<li>RSM是属于在图像空间的GI</li>
+<li>SSAO和SSDO是属于屏幕空间的GI</li>
+</ul>
+<p>什么是屏幕空间：</p>
+<ol>
+<li>使用的所有信息都来自“屏幕”，也就是做全局光照之前屏幕上能看到的信息，这些信息也就是做全局光照之前的直接光照信息；</li>
+<li>换一个角度说，是已经渲染过的场景的<strong>后处理</strong></li>
+<li>为了与此区别我们把RSM与SM的方法称为图像空间，因为信息是来自从灯光看向的场景 所获得的信息。</li>
+</ol>
+<h3 id="ssaoscreen-space-ambient-occlusion">SSAO（Screen Space Ambient Occlusion 屏幕空间环境光遮蔽）</h3>
+<p>为什么要AO?</p>
+<ol>
+<li>易实现</li>
+<li>加强了物体的相对位置感</li>
+</ol>
+<p>什么是SSAO?</p>
+<ol>
+<li>一个全局光照的近似</li>
+<li>在屏幕空间下</li>
+</ol>
+<p>关键idea：</p>
+<ol>
+<li>我们不知道间接光照</li>
+<li>假设任何点来自任何方向的间接光照都是一样的一个<strong>常数</strong>，类似于phong模型中ambient</li>
+<li>但是不见得任何方向都能接受到上述的间接光照，所以需要考虑<strong>visibility</strong> </li>
+</ol>
+<p>原理：</p>
+<p><img alt="image-20230805144207185" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308051442244.png" /></p>
+<p>怎样在SS下？</p>
+<p><img alt="image-20230805145844905" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308051523711.png" /></p>
+<p>tips：如果有法线信息，则是HBAO(Horizon Based Ambient Occlusion)，可以防止出现两物体隔得很远也发生AO</p>
+<h2 id="lecture9-3">Lecture9 全局光照(3)</h2>
+<h3 id="ssdoscreen-space-directional-occlusion">SSDO（Screen Space Directional Occlusion)</h3>
+<p>什么是？</p>
+<ol>
+<li>SSAO的提高</li>
+<li>考虑得更加精准</li>
+</ol>
+<p>关键Idea：</p>
+<ol>
+<li>
+<p>不用假设入射光是常量</p>
+</li>
+<li>
+<p>一些入射光的信息是已经知道的</p>
+</li>
+<li>
+<p>很像RSM，但不是from RSM，而是from 相机</p>
+</li>
+<li>
+<p>类似路径追踪，考虑与SSAO的比较，<strong>完全相反</strong>的思想：</p>
+</li>
+</ol>
+<p><img alt="image-20230805152352124" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308051523193.png" /></p>
+<p>问题：</p>
+<ol>
+<li>只能小范围的GI</li>
+<li>需要visibility</li>
+<li>P点对于半球上的点可见性是通过Camera对这些点的可见性来近似计算的，存在于屏幕空间中丢失信息的问题</li>
+</ol>
+<h3 id="ssrscreen-space-reflection">SSR（Screen Space Reflection）</h3>
+<p>说是Reflection，也可以理解是<strong>Ray-tracing</strong></p>
+<p>什么是？</p>
+<ol>
+<li>仍然是一种在RTR中实现GI的方式</li>
+<li>是在屏幕空间中做光线追踪</li>
+<li>不需要知道3D空间中的三角形、网格、加速结构等3D信息，只需要屏幕空间中已有的信息，也就是从camera看去场景的得到的这样一层“壳”。</li>
+</ol>
+<p>两个基本任务：</p>
+<ol>
+<li>由于我们认为它是screen space raytracing,我们考虑的是<strong>任何光线</strong>(不单单是反射光)与场景中这层壳去做求交.</li>
+<li>找到交点后,算出对shading point的贡献值.</li>
+</ol>
+<p>着色时：</p>
+<p>这部分与路径追踪的方法完全相同，仅仅是把光线与场景求交变成了光线与“壳”求交，因此路径追踪的算法在这里是可以直接使用的。</p>
+<p>对于任何一个shading point，看到的radicance就是对半球进行积分,如果是specular的物体,那么相当于光线打到物体的哪里,就用它所发出的radiance就可以.</p>
+<p><img alt="img" src="https://pic4.zhimg.com/80/v2-1b6ca88adf5481d5f8d35fc6ce3efdc3_720w.webp" /></p>
+<p>如果是glossy情况下,同样的用蒙特卡洛多采样几根光线,不管怎么所打到的物体反射过来的radiance,一定就是shading point点接收到的incident radiance.</p>
+<p><strong>这里我们同样需要假设反射物/次级光源 是Diffuse的情况,地板之类的接收物可以是任何物体.</strong></p>
+<h2 id="lecture10-1">Lecture10 基于物理的材质(1)</h2>
+<p>实时渲染中的材质：</p>
+<ol>
+<li><strong>基于物体表面上定义的材质</strong></li>
+<li>微表面</li>
+<li>Disney Principled BRDF计算量比较轻量级，因此虽然产生初衷是为了能够用于离线渲染,但也可以运用在实时渲染中，这套材质的种类多效果也很不错,但也不是PBR，是基于artist的角度来考虑的。</li>
+<li><strong>基于体积上定义的材质:</strong></li>
+<li>由于光线会进入到云,烟,雾,皮肤,头发等体积里,在RTR中基于体积上要比基于表面的困难许多,我们大部分考虑的还是光线在这些体积中作用一次(single)和多次(multiple)的分离考虑方法,这个在下节课学习.</li>
+</ol>
+<h3 id="microfacet-brdf">Microfacet BRDF</h3>
+<div class="arithmatex">\[f(i,o)=\frac {F(i,h)G(i,o,h)D(h)}{4(n,i)(n,o)}\]</div>
+<h4 id="f-the-fresnel-term">F : The Fresnel Term 菲涅尔项</h4>
+<p>表示观察角度与反射的关系(从一个角度看去会有多少的能量被反射)</p>
+<p>有多少能量被反射取决于入射光的角度，当入射方向接近grazing angle掠射角度的时候，光线是被反射的最多的,也就是当你的入射方向与法线几乎垂直时候,反射的radiance是最多的.</p>
+<p>由于光路的可逆性，我们可以认为眼睛看过去的方向是光线入射方向。</p>
+<p><img alt="img" src="https://pic1.zhimg.com/80/v2-407725dd0ae35fa6b343361d592aa124_720w.webp" /></p>
+<p>最右边的接近如grazing angle</p>
+<p>下面是对于绝缘体反射率与角度的关系:</p>
+<p>以河面为例,让你入射方向与河面法线平行,则会直接看到河底;如果入射方向与河面法线垂直,则能最大程度看到反射出的天空之类的.</p>
+<p><img alt="img" src="https://pic4.zhimg.com/80/v2-0367ee173e6f267aadf4887f2e5e3cb3_720w.webp" /></p>
+<p>绝缘体反射率与角度的关系</p>
+<p>下面是对于导体反射率与角度的关系，与绝缘体不同，部分会出现反常现象</p>
+<p><img alt="img" src="https://pic3.zhimg.com/80/v2-14fb0db15371d3aabd8ff4239aed31d2_720w.webp" /></p>
+<p>导体反射率与角度的关系</p>
+<p><strong>菲涅尔项告诉我们有百分之多少的能量会被反射出来.</strong></p>
+<p>菲涅尔项的推导时要考虑光线的S极化和P极化效果，公式比较复杂,因为要考虑不同介质,如从空气到物体表面,各自的折射率和入射角折射角，最终推导出下图中的公式。</p>
+<p><img alt="img" src="https://pic2.zhimg.com/80/v2-06e4e030f68d6524e3ec029ea88e2e59_720w.webp" /></p>
+<p>但我们平常不用这个,而是用一个简单的近似：Schlick’s approximation</p>
+<p><img alt="img" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308061426926.webp" /></p>
+<p>我们之前讲过:</p>
+<p>当θ-&gt;90度,cosθ=0,则R(θ)=1;</p>
+<p>当θ-&gt;0度,cosθ=1,则R(θ)=R0;</p>
+<p>其中R0(基础反射率)取决于物体,不同物体的R0各不相同.</p>
+<h4 id="d-normal-distribution-function">D : Normal Distribution Function 表面分布函数</h4>
+<p>决定这一项的是不同微表面朝向的法线分布；</p>
+<p>当朝向比较集中的时候会得到Glossy的结果,如果朝向特别集中指向时认为是specular的.</p>
+<p>常用的有beckmann和GGX模型</p>
+<h5 id="beckmann">beckmann：</h5>
+<p>其目的为了描述法线分布，因此肯定是一个关于法线方向h的函数，而h是半球上的任意一个方向，然后描述这一方向对应的值是多少，这就是NDF。</p>
+<p>举个例子，给定向量h，如果我们的微平面中有35%与向量hℎ取向一致，则法线分布函数或者说NDF将会返回0.35。</p>
+<h5 id="ggx">GGX</h5>
+<p>Beckmann模型的NDF曲线与GGX模型的NDF曲线相比有一个明显的特点:</p>
+<p>Long tail 长尾性质:</p>
+<p>会很快衰减，但是衰减到一定程度的时候衰减速度会变慢,可以看到即使到了grazing angle(90度)时仍不为0。</p>
+<p><img alt="img" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202308061443694.webp" /></p>
+<p>这会带来两个好处:</p>
+<ol>
+<li>Beckmann的高光会逐渐消失,而GGX的高光会减少而不会消失,这就意味着高光的周围我们看到一种光晕的现象.</li>
+<li>GGX除了高光部分,其余部分会像Diffuse的感觉. </li>
+</ol>
+<p><img alt="img" src="https://pic1.zhimg.com/80/v2-3a27926fd12ad0cf5a6ca2b2613386d4_720w.webp" /></p>
+<p>Beckmann模型与GGX模型的实际效果对比如图。</p>
+<p>相同的粗糙程度下GGX的效果更加自然,因为long tail性质导致高光到非高光有一个柔和的过渡状态,而非Beckmann的高光到达grazing angle后戛然而止,我们希望的是像GGX一样的效果.</p>
+<p><img alt="img" src="https://pic3.zhimg.com/80/v2-66b15dfe06cc81c517382a5504b2445a_720w.webp" /></p>
+<h4 id="g-geometry-term">G : Geometry term 自遮挡</h4>
+<p>可以解决边缘非常亮的问题</p>
+<p>Kulla-Conty Approximation</p>
+<h2 id="lecture11-2">Lecture11 基于物理的材质(2)</h2>
+<p>放个链接，有点懒得做</p>
+<p><a href="https://zhuanlan.zhihu.com/p/385438367">GAMES202 高质量实时渲染笔记Lecture11：Real-Time Physically-Based Materials (Surface models cont.) - 知乎 (zhihu.com)</a></p>
+<h2 id="lecture12-1">Lecture12 光线追踪(1)</h2>
+<p>RTRT: Real-Time-Ray-Tracing，最重要的工作是<strong>降噪</strong>，因为算力只能支持1spp（1 sample per pixel)</p>
+<p>而降噪最重要的idea是<strong>Temporal</strong>（时间上）</p>
+<h2 id="lecture13-2">Lecture13 光线追踪(2)</h2>
+<p>滤波，双边滤波，联合双边滤波</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
