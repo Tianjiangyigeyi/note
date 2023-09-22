@@ -1,0 +1,3143 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="bk">
+      
+      
+      
+        <link rel="prev" href="../Hot100/">
+      
+      
+        <link rel="next" href="../%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
+    
+    
+      
+        <title>剑指offer - bk's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0d440cfe.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#offer-05-easy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="bk&#39;s Notebook" class="md-header__button md-logo" aria-label="bk's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            bk's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              剑指offer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Tianjiangyigeyi/note" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tianjiangyigeyi/note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/%E6%80%8E%E6%A0%B7%E9%83%A8%E7%BD%B2%E5%88%B0Github/" class="md-tabs__link">
+        其他资料
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230202/" class="md-tabs__link">
+        主干课程
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Hot100/" class="md-tabs__link md-tabs__link--active">
+        LeetCode刷题笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/SSR%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0%28Screen-Space-Reflection%29/" class="md-tabs__link">
+        图形学
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-tabs__link">
+        侯捷cpp
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F%E7%9A%84%E6%80%9D%E8%80%83/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F%E6%98%AF%E7%8A%B6%E6%80%81%E5%90%8C%E6%AD%A5/" class="md-tabs__link">
+        一些思考
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="bk&#39;s Notebook" class="md-nav__button md-logo" aria-label="bk's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    bk's Notebook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Tianjiangyigeyi/note" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Tianjiangyigeyi/note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          其他资料
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          其他资料
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/%E6%80%8E%E6%A0%B7%E9%83%A8%E7%BD%B2%E5%88%B0Github/" class="md-nav__link">
+        怎样部署到github
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/csharp/" class="md-nav__link">
+        c#
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%85%B6%E4%BB%96%E8%B5%84%E6%96%99/Unity%E7%AE%80%E8%AE%B0/" class="md-nav__link">
+        Unity
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          主干课程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          主干课程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          概率论与数理统计
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          概率论与数理统计
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230202/" class="md-nav__link">
+        第一章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230203/" class="md-nav__link">
+        第二章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230204/" class="md-nav__link">
+        第三章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230205/" class="md-nav__link">
+        第四章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230206/" class="md-nav__link">
+        第五章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230213/" class="md-nav__link">
+        第六章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230214/" class="md-nav__link">
+        第七章
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/20230215/" class="md-nav__link">
+        第八章
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E6%99%AE%E9%80%9A%E7%89%A9%E7%90%86%E5%AD%A62/%E6%99%AE%E7%89%A92/" class="md-nav__link">
+        普通物理学2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/%E8%AE%A1%E7%BB%84/" class="md-nav__link">
+        计组期中复习
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/DB/" class="md-nav__link">
+        DB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%B8%BB%E5%B9%B2%E8%AF%BE%E7%A8%8B/ads/" class="md-nav__link">
+        ADS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          LeetCode刷题笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          LeetCode刷题笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hot100/" class="md-nav__link">
+        Hot100
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          剑指offer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        剑指offer
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    题目描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    我的答案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    参考答案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    感想
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" class="md-nav__link">
+        每日一题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          图形学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          图形学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/SSR%E7%AE%97%E6%B3%95%E5%B0%8F%E8%AE%B0%28Screen-Space-Reflection%29/" class="md-nav__link">
+        SSR算法小记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/LearnOpenGL/" class="md-nav__link">
+        OpenGL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/GAMES101/" class="md-nav__link">
+        GAMES101
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%9B%BE%E5%BD%A2%E5%AD%A6/GAMES202/" class="md-nav__link">
+        GAMES202
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          侯捷cpp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          侯捷cpp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        c++面向对象程序设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/%E5%85%BC%E8%B0%88%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        兼谈对象模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/c%2B%2B%E6%A0%87%E5%87%86%E5%BA%93%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%86%85%E6%A0%B8%E5%88%86%E6%9E%90/" class="md-nav__link">
+        c++标准库体系结构与内核分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%B7%9F%E4%BE%AF%E6%8D%B7%E5%AD%A6cpp/%E8%99%9A/" class="md-nav__link">
+        关于“虚”的思考
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          一些思考
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          一些思考
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%85%B3%E4%BA%8E%E6%B8%B8%E6%88%8F%E7%9A%84%E6%80%9D%E8%80%83/%E8%8B%B1%E9%9B%84%E8%81%94%E7%9B%9F%E6%98%AF%E7%8A%B6%E6%80%81%E5%90%8C%E6%AD%A5/" class="md-nav__link">
+        英雄联盟的同步机制
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    题目描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    我的答案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    参考答案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    感想
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="offer-05-easy">剑指 Offer 05. 替换空格(easy)</h1>
+<p>2023/9/13</p>
+<p>00 : 05 : 14</p>
+<hr />
+<h2 id="_1">题目描述</h2>
+<p>请实现一个函数，把字符串 <code>s</code> 中的每个空格替换成"%20"。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：s = &quot;We are happy.&quot;
+输出：&quot;We%20are%20happy.&quot;
+</code></pre>
+<p><strong>限制：</strong></p>
+<pre><code>0 &lt;= s 的长度 &lt;= 10000
+</code></pre>
+<hr />
+<h2 id="_2">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    string replaceSpace(string s) {
+        int n = s.length();
+        for (int i = 0; i &lt; n; ++i)
+        {
+            if (s[i] == ' ')
+            {
+                s[i] = '%';
+                s.insert(i+1, &quot;20&quot;);
+                i += 2;
+                n += 2;
+            }
+        }
+        return s;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_3">参考答案</h2>
+<hr />
+<h2 id="_4">感想</h2>
+<p>很简单, 再新建一个字符串也行, 反正都是遍历</p>
+<h1 id="offer-06-easy"><a href="https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">剑指 Offer 06. 从尾到头打印链表</a>(easy)</h1>
+<p>2023/9/15</p>
+<p>00 : 03 : 17</p>
+<hr />
+<h2 id="_5">题目描述</h2>
+<p>输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：head = [1,3,2]
+输出：[2,3,1]
+</code></pre>
+<p><strong>限制：</strong></p>
+<pre><code>0 &lt;= 链表长度 &lt;= 10000
+</code></pre>
+<hr />
+<h2 id="_6">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    vector&lt;int&gt; reversePrint(ListNode* head) {
+        vector&lt;int&gt; res;
+        ListNode *p = head;
+        while (p != nullptr)
+        {
+            res.insert(res.begin(), p-&gt;val);
+            p = p-&gt;next;
+        }
+        return res;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_7">参考答案</h2>
+<pre><code class="language-cpp">
+</code></pre>
+<hr />
+<h2 id="_8">感想</h2>
+<p>方法很多, 简单</p>
+<h1 id="offer-09-easy"><a href="https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/">剑指 Offer 09. 用两个栈实现队列</a>(easy)</h1>
+<p>2023/9/19</p>
+<p>00 : 02 : 27</p>
+<hr />
+<h2 id="_9">题目描述</h2>
+<p>用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 <code>appendTail</code> 和 <code>deleteHead</code> ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，<code>deleteHead</code> 操作返回 -1 )</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：
+[&quot;CQueue&quot;,&quot;appendTail&quot;,&quot;deleteHead&quot;,&quot;deleteHead&quot;,&quot;deleteHead&quot;]
+[[],[3],[],[],[]]
+输出：[null,null,3,-1,-1]
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入：
+[&quot;CQueue&quot;,&quot;deleteHead&quot;,&quot;appendTail&quot;,&quot;appendTail&quot;,&quot;deleteHead&quot;,&quot;deleteHead&quot;]
+[[],[],[5],[2],[],[]]
+输出：[null,-1,null,null,5,2]
+</code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= values &lt;= 10000</code></li>
+<li>最多会对<code>appendTail、deleteHead</code>进行<code>10000</code> 次调用</li>
+</ul>
+<hr />
+<h2 id="_10">我的答案</h2>
+<pre><code class="language-c">class CQueue {
+public:
+    CQueue() {
+
+    }
+
+    void appendTail(int value) {
+        instk.push(value);
+    }
+
+    int deleteHead() {
+        if (outstk.empty())
+        {
+            if (instk.empty())
+            {
+                return -1;
+            }
+            else
+            {
+                while (!instk.empty())
+                {
+                    int tmp = instk.top();
+                    outstk.push(tmp);
+                    instk.pop();
+                }
+            }
+        }
+        int tmp = outstk.top();
+        outstk.pop();
+        return tmp;
+    }
+    stack&lt;int&gt; instk;
+    stack&lt;int&gt; outstk;
+};
+</code></pre>
+<hr />
+<h2 id="_11">参考答案</h2>
+<pre><code class="language-cpp">class CQueue {
+private:
+    stack&lt;int&gt; inStack, outStack;
+
+    void in2out() {
+        while (!inStack.empty()) {
+            outStack.push(inStack.top());
+            inStack.pop();
+        }
+    }
+
+public:
+    CQueue() {}
+
+    void appendTail(int value) {
+        inStack.push(value);
+    }
+
+    int deleteHead() {
+        if (outStack.empty()) {
+            if (inStack.empty()) {
+                return -1;
+            }
+            in2out();
+        }
+        int value = outStack.top();
+        outStack.pop();
+        return value;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_12">感想</h2>
+<p>一个输入栈一个输出栈</p>
+<h1 id="offer-18-easy"><a href="https://leetcode.cn/problems/shan-chu-lian-biao-de-jie-dian-lcof/">剑指 Offer 18. 删除链表的节点</a>(easy)</h1>
+<p>2023/9/16</p>
+<p>00 : 03 : 14</p>
+<hr />
+<h2 id="_13">题目描述</h2>
+<p>给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。</p>
+<p>返回删除后的链表的头节点。</p>
+<p><strong>注意：</strong>此题对比原题有改动</p>
+<p><strong>示例 1:</strong></p>
+<pre><code>输入: head = [4,5,1,9], val = 5
+输出: [4,1,9]
+解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -&gt; 1 -&gt; 9.
+</code></pre>
+<p><strong>示例 2:</strong></p>
+<pre><code>输入: head = [4,5,1,9], val = 1
+输出: [4,5,9]
+解释: 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -&gt; 5 -&gt; 9.
+</code></pre>
+<p><strong>说明：</strong></p>
+<ul>
+<li>题目保证链表中节点的值互不相同</li>
+<li>若使用 C 或 C++ 语言，你不需要 <code>free</code> 或 <code>delete</code> 被删除的节点</li>
+</ul>
+<hr />
+<h2 id="_14">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    ListNode* deleteNode(ListNode* head, int val) {
+        ListNode *curr = head;
+        ListNode *prev = nullptr;
+        while (curr != nullptr)
+        {
+            if (curr-&gt;val == val)
+            {
+                if (prev == nullptr)
+                {
+                    return head-&gt;next;
+                }
+                else
+                {
+                    prev-&gt;next = curr-&gt;next;
+                    return head;
+                }
+            }
+            prev = curr;
+            curr = curr-&gt;next;
+        }
+        return nullptr;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_15">参考答案</h2>
+<pre><code class="language-cpp">
+</code></pre>
+<hr />
+<h2 id="_16">感想</h2>
+<p>方法很多, 简单</p>
+<h1 id="offer-20-medium">剑指 Offer 20. 表示数值的字符串(medium)</h1>
+<p>2023/9/13</p>
+<p>00 : 54 : 27</p>
+<hr />
+<h2 id="_17">题目描述</h2>
+<p>请实现一个函数用来判断字符串是否表示<strong>数值</strong>（包括整数和小数）。</p>
+<p><strong>数值</strong>（按顺序）可以分成以下几个部分：</p>
+<ol>
+<li>若干空格</li>
+<li>一个 <strong>小数</strong> 或者 <strong>整数</strong></li>
+<li>（可选）一个 <code>'e'</code> 或 <code>'E'</code> ，后面跟着一个 <strong>整数</strong></li>
+<li>若干空格</li>
+</ol>
+<p><strong>小数</strong>（按顺序）可以分成以下几个部分：</p>
+<ol>
+<li>（可选）一个符号字符（<code>'+'</code> 或 <code>'-'</code>）</li>
+<li>下述格式之一：</li>
+<li>至少一位数字，后面跟着一个点 <code>'.'</code></li>
+<li>至少一位数字，后面跟着一个点 <code>'.'</code> ，后面再跟着至少一位数字</li>
+<li>一个点 <code>'.'</code> ，后面跟着至少一位数字</li>
+</ol>
+<p><strong>整数</strong>（按顺序）可以分成以下几个部分：</p>
+<ol>
+<li>（可选）一个符号字符（<code>'+'</code> 或 <code>'-'</code>）</li>
+<li>至少一位数字</li>
+</ol>
+<p>部分<strong>数值</strong>列举如下：</p>
+<ul>
+<li><code>["+100", "5e2", "-123", "3.1416", "-1E-16", "0123"]</code></li>
+</ul>
+<p>部分<strong>非数值</strong>列举如下：</p>
+<ul>
+<li><code>["12e", "1a3.14", "1.2.3", "+-5", "12e+5.4"]</code></li>
+</ul>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：s = &quot;0&quot;
+输出：true
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入：s = &quot;e&quot;
+输出：false
+</code></pre>
+<p><strong>示例 3：</strong></p>
+<pre><code>输入：s = &quot;.&quot;
+输出：false
+</code></pre>
+<p><strong>示例 4：</strong></p>
+<pre><code>输入：s = &quot;    .1  &quot;
+输出：true
+</code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 20</code></li>
+<li><code>s</code> 仅含英文字母（大写和小写），数字（<code>0-9</code>），加号 <code>'+'</code> ，减号 <code>'-'</code> ，空格 <code>' '</code> 或者点 <code>'.'</code> 。</li>
+</ul>
+<hr />
+<h2 id="_18">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    bool checkInt(string s)
+    {
+        int n = s.length();
+        if (s[0] == '+' || s[0] == '-')
+        {
+            if (n == 1)
+                return false;
+        }
+        else if (s[0] &lt; '0' || s[0] &gt; '9')
+        {
+            return false;
+        }
+        for (int i = 1; i &lt; n; ++i)
+        {
+            if (s[i] &lt; '0' || s[i] &gt; '9')
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    bool checkFloat(string s, int dotIndex)
+    {
+        int n = s.length();
+        if (dotIndex &gt;= n)
+        {
+            return false;
+        }
+        if (dotIndex == 0 &amp;&amp; n == 1)
+        {
+            return false;
+        }
+        int i = 0;
+        if (s[i] == '+' || s[i] == '-')
+        {
+            i++;
+        }
+        for (; i &lt; n; ++i)
+        {
+            if (s[i] == '.')
+            {
+                if (i == n-1)
+                {
+                    if (n == 1 || s[i-1] &lt; '0' || s[i-1] &gt; '9')
+                    {
+                        return false;
+                    }
+                }
+                else if (s[i+1] &lt; '0' || s[i+1] &gt; '9' || i != dotIndex)
+                {
+                    return false;
+                }
+            }
+            else if (s[i] &lt; '0' || s[i] &gt; '9')
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    bool isNumber(string s) {
+        int n = s.length();
+        int left = 0;
+        int dotIndex = -1;
+        int EIndex = -1;
+        while (left &lt; n &amp;&amp; s[left] == ' ')
+        {
+            ++left;
+        }
+        if (left == n)
+        {
+            return false;
+        }
+        int right = left;
+        while (right &lt; n &amp;&amp; s[right] != ' ')
+        {
+            if (s[right] == '.')
+            {
+                dotIndex = right;
+            }
+            else if (s[right] == 'e' || s[right] == 'E')
+            {
+                EIndex = right;
+            }
+            ++right;
+        }
+        for (int i = right; i &lt; n; ++i)
+        {
+            if (s[i] != ' ')
+            {
+                return false;
+            }
+        }
+        s = s.substr(left, right-left);
+        if (dotIndex != -1)
+        {
+           dotIndex -= left;
+        }
+        if (EIndex != -1)
+        {
+            EIndex -= left;
+        }
+        // 123
+        if (dotIndex == -1 &amp;&amp; EIndex == -1)
+        {
+            return checkInt(s);
+        }
+        // 1E3
+        else if(dotIndex == -1)
+        {
+            return checkInt(s.substr(0, EIndex)) &amp;&amp; checkInt(s.substr(EIndex+1));
+        }
+        // 1.23
+        else if(EIndex == -1)
+        {
+            return checkFloat(s, dotIndex);
+        }
+        // 1.2E3
+        else
+        {
+            return checkFloat(s.substr(0, EIndex), dotIndex) &amp;&amp; checkInt(s.substr(EIndex+1));
+        }
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_19">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    enum State {
+        STATE_INITIAL,
+        STATE_INT_SIGN,
+        STATE_INTEGER,
+        STATE_POINT,
+        STATE_POINT_WITHOUT_INT,
+        STATE_FRACTION,
+        STATE_EXP,
+        STATE_EXP_SIGN,
+        STATE_EXP_NUMBER,
+        STATE_END
+    };
+
+    enum CharType {
+        CHAR_NUMBER,
+        CHAR_EXP,
+        CHAR_POINT,
+        CHAR_SIGN,
+        CHAR_SPACE,
+        CHAR_ILLEGAL
+    };
+
+    CharType toCharType(char ch) {
+        if (ch &gt;= '0' &amp;&amp; ch &lt;= '9') {
+            return CHAR_NUMBER;
+        } else if (ch == 'e' || ch == 'E') {
+            return CHAR_EXP;
+        } else if (ch == '.') {
+            return CHAR_POINT;
+        } else if (ch == '+' || ch == '-') {
+            return CHAR_SIGN;
+        } else if (ch == ' ') {
+            return CHAR_SPACE;
+        } else {
+            return CHAR_ILLEGAL;
+        }
+    }
+
+    bool isNumber(string s) {
+        unordered_map&lt;State, unordered_map&lt;CharType, State&gt;&gt; transfer{
+            {
+                STATE_INITIAL, {
+                    {CHAR_SPACE, STATE_INITIAL},
+                    {CHAR_NUMBER, STATE_INTEGER},
+                    {CHAR_POINT, STATE_POINT_WITHOUT_INT},
+                    {CHAR_SIGN, STATE_INT_SIGN}
+                }
+            }, {
+                STATE_INT_SIGN, {
+                    {CHAR_NUMBER, STATE_INTEGER},
+                    {CHAR_POINT, STATE_POINT_WITHOUT_INT}
+                }
+            }, {
+                STATE_INTEGER, {
+                    {CHAR_NUMBER, STATE_INTEGER},
+                    {CHAR_EXP, STATE_EXP},
+                    {CHAR_POINT, STATE_POINT},
+                    {CHAR_SPACE, STATE_END}
+                }
+            }, {
+                STATE_POINT, {
+                    {CHAR_NUMBER, STATE_FRACTION},
+                    {CHAR_EXP, STATE_EXP},
+                    {CHAR_SPACE, STATE_END}
+                }
+            }, {
+                STATE_POINT_WITHOUT_INT, {
+                    {CHAR_NUMBER, STATE_FRACTION}
+                }
+            }, {
+                STATE_FRACTION,
+                {
+                    {CHAR_NUMBER, STATE_FRACTION},
+                    {CHAR_EXP, STATE_EXP},
+                    {CHAR_SPACE, STATE_END}
+                }
+            }, {
+                STATE_EXP,
+                {
+                    {CHAR_NUMBER, STATE_EXP_NUMBER},
+                    {CHAR_SIGN, STATE_EXP_SIGN}
+                }
+            }, {
+                STATE_EXP_SIGN, {
+                    {CHAR_NUMBER, STATE_EXP_NUMBER}
+                }
+            }, {
+                STATE_EXP_NUMBER, {
+                    {CHAR_NUMBER, STATE_EXP_NUMBER},
+                    {CHAR_SPACE, STATE_END}
+                }
+            }, {
+                STATE_END, {
+                    {CHAR_SPACE, STATE_END}
+                }
+            }
+        };
+
+        int len = s.length();
+        State st = STATE_INITIAL;
+
+        for (int i = 0; i &lt; len; i++) {
+            CharType typ = toCharType(s[i]);
+            if (transfer[st].find(typ) == transfer[st].end()) {
+                return false;
+            } else {
+                st = transfer[st][typ];
+            }
+        }
+        return st == STATE_INTEGER || st == STATE_POINT || st == STATE_FRACTION || st == STATE_EXP_NUMBER || st == STATE_END;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_20">感想</h2>
+<p>这题目很麻烦, 题解的状态机的做法其实也很麻烦, 暂时没想到什么好的</p>
+<h1 id="offer-21-easy"><a href="https://leetcode.cn/problems/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof/">剑指 Offer 21. 调整数组顺序使奇数位于偶数前面</a>(easy)</h1>
+<p>2023/9/18</p>
+<p>00 : 03 : 16</p>
+<hr />
+<h2 id="_21">题目描述</h2>
+<p>输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有奇数在数组的前半部分，所有偶数在数组的后半部分。</p>
+<p><strong>示例：</strong></p>
+<pre><code>输入：nums = [1,2,3,4]
+输出：[1,3,2,4] 
+注：[3,1,2,4] 也是正确的答案之一。
+</code></pre>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>0 &lt;= nums.length &lt;= 50000</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 10000</code></li>
+</ol>
+<h2 id="_22">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    vector&lt;int&gt; exchange(vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        int left = 0, right = n-1;
+        while (left &lt; right)
+        {
+            while (left &lt; right &amp;&amp; nums[left] &amp; 1)
+            {
+                ++left;
+            }
+            while (left &lt; right &amp;&amp; (nums[right]+1) &amp; 1)
+            {
+                --right;
+            }
+            swap(nums[left], nums[right]);
+        }
+        return nums;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_23">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    vector&lt;int&gt; exchange(vector&lt;int&gt;&amp; nums) {
+        int left = 0, right = nums.size() - 1;
+        while (left &lt; right) {
+            while (left &lt; right and nums[left] % 2 == 1) {
+                left++;
+            }
+            while (left &lt; right and nums[right] % 2 == 0) {
+                right--;
+            }
+            if (left &lt; right) {
+                swap(nums[left++], nums[right--]);
+            }
+        }
+        return nums;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_24">感想</h2>
+<p>快排的思想</p>
+<h1 id="offer-22-keasy"><a href="https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/">剑指 Offer 22. 链表中倒数第k个节点</a>(easy)</h1>
+<p>2023/9/16</p>
+<p>00 : 03 : 34</p>
+<hr />
+<h2 id="_25">题目描述</h2>
+<p>输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。</p>
+<p>例如，一个链表有 <code>6</code> 个节点，从头节点开始，它们的值依次是 <code>1、2、3、4、5、6</code>。这个链表的倒数第 <code>3</code> 个节点是值为 <code>4</code> 的节点。</p>
+<p><strong>示例：</strong></p>
+<pre><code>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 k = 2.
+
+返回链表 4-&gt;5.
+</code></pre>
+<h2 id="_26">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    ListNode* getKthFromEnd(ListNode* head, int k) {
+        ListNode *left = head, *right = head;
+        for (int i = 0; i &lt; k-1; ++i)
+        {
+            right = right-&gt;next;
+        }
+        while (right-&gt;next != nullptr)
+        {
+            left = left-&gt;next;
+            right = right-&gt;next;
+        }
+        return left;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_27">参考答案</h2>
+<pre><code class="language-cpp">
+</code></pre>
+<hr />
+<h2 id="_28">感想</h2>
+<p>看到标签是双指针就立马能想到这个比较巧妙的一次遍历的方法了</p>
+<h1 id="offer-24-easy"><a href="https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/">剑指 Offer 24. 反转链表</a>(easy)</h1>
+<p>2023/9/15</p>
+<hr />
+<h2 id="_29">题目描述</h2>
+<p>定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。</p>
+<p><strong>示例:</strong></p>
+<pre><code>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL
+输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL
+</code></pre>
+<p><strong>限制：</strong></p>
+<pre><code>0 &lt;= 节点个数 &lt;= 5000
+</code></pre>
+<p><strong>注意</strong>：本题与主站 206 题相同：https://leetcode-cn.com/problems/reverse-linked-list/</p>
+<hr />
+<h2 id="_30">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* res = head;
+        if (head == nullptr)
+        {
+            return nullptr;
+        }
+        head = head-&gt;next;
+        res-&gt;next = nullptr;
+        while (head != nullptr)
+        {
+            ListNode *tmp = res;
+            res = head;
+            head = head-&gt;next;
+            res-&gt;next = tmp;
+        }
+        return res;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_31">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prev = nullptr;
+        ListNode* curr = head;
+        while (curr) {
+            ListNode* next = curr-&gt;next;
+            curr-&gt;next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_32">感想</h2>
+<p>简单题秒杀</p>
+<h1 id="offer-25-easy"><a href="https://leetcode.cn/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/">剑指 Offer 25. 合并两个排序的链表</a>(easy)</h1>
+<p>2023/9/17</p>
+<p>00 : 05 : 28</p>
+<hr />
+<h2 id="_33">题目描述</h2>
+<p>输入两个递增排序的链表，合并这两个链表并使新链表中的节点仍然是递增排序的。</p>
+<p><strong>示例1：</strong></p>
+<pre><code>输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4
+输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
+</code></pre>
+<p><strong>限制：</strong></p>
+<pre><code>0 &lt;= 链表长度 &lt;= 1000
+</code></pre>
+<p>注意：本题与主站 21 题相同：https://leetcode-cn.com/problems/merge-two-sorted-lists/</p>
+<hr />
+<h2 id="_34">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+        ListNode *head = new ListNode(-1);
+        ListNode *tail = head;
+        while (l1 != nullptr &amp;&amp; l2 != nullptr)
+        {
+            if (l1-&gt;val &gt; l2-&gt;val)
+            {
+                tail-&gt;next = l2;
+                l2 = l2-&gt;next;
+            }
+            else
+            {
+                tail-&gt;next = l1;
+                l1 = l1-&gt;next;
+            }
+            tail = tail-&gt;next;
+        }
+        tail-&gt;next = l1 == nullptr ? l2 : l1;
+
+        return head-&gt;next;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_35">参考答案</h2>
+<pre><code class="language-cpp">
+</code></pre>
+<hr />
+<h2 id="_36">感想</h2>
+<p>要学习哨兵的这个思想</p>
+<h1 id="offer-30-mineasy"><a href="https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof/">剑指 Offer 30. 包含min函数的栈</a>(easy)</h1>
+<p>2023/9/19</p>
+<p>00 : 12 : 51</p>
+<hr />
+<h2 id="_37">题目描述</h2>
+<p>定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。</p>
+<p><strong>示例:</strong></p>
+<pre><code>MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.min();   --&gt; 返回 -3.
+minStack.pop();
+minStack.top();      --&gt; 返回 0.
+minStack.min();   --&gt; 返回 -2.
+</code></pre>
+<hr />
+<h2 id="_38">我的答案</h2>
+<pre><code class="language-c">class MinStack {
+public:
+    /** initialize your data structure here. */
+    MinStack() {
+    }
+
+    void push(int x) {
+        if (stk.empty())
+        {
+            minEle = x;
+        }
+        stk.push(x - minEle);
+        minEle = minEle &lt; x ? minEle : x;
+    }
+
+    void pop() {
+        if (stk.top() &lt; 0)
+        {
+            minEle -= stk.top();
+        }
+        stk.pop();
+    }
+
+    int top() {
+        return stk.top() &lt; 0 ? minEle : stk.top() + minEle;
+    }
+
+    int min() {
+        return minEle;
+    }
+    stack&lt;long&gt; stk;
+    long minEle;
+};
+</code></pre>
+<hr />
+<h2 id="_39">参考答案</h2>
+<pre><code class="language-cpp">class MinStack {
+public:
+    /** initialize your data structure here. */
+    long long num_min;
+    stack&lt;long long&gt; stack_diff;
+    MinStack() {
+    }
+
+    void push(int x) {
+        if(stack_diff.empty())
+        {
+            num_min = x;
+            stack_diff.push(0);
+            return;
+        }
+        stack_diff.push((long long)x-num_min);
+        if(x &lt; num_min)
+        {
+            num_min = x;
+        }
+    }
+
+    void pop() {
+        if(stack_diff.top() &lt; 0)
+        {
+            num_min -= stack_diff.top();
+        }
+        stack_diff.pop();
+    }
+
+    int top() {
+        if(stack_diff.top() &gt;= 0)
+        {
+            return stack_diff.top()+num_min;
+        }
+        else
+        {
+            return num_min;
+        }
+    }
+
+    int min() {
+        return num_min;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_40">感想</h2>
+<p>最好的做法就是不用辅助栈, 直接记录一个最小值和每个元素与最小值的差即可</p>
+<h1 id="offer-35-medium"><a href="https://leetcode.cn/problems/fu-za-lian-biao-de-fu-zhi-lcof/">剑指 Offer 35. 复杂链表的复制</a>(medium)</h1>
+<p>2023/9/16</p>
+<p>00 : 09 : 30</p>
+<hr />
+<h2 id="_41">题目描述</h2>
+<p>请实现 <code>copyRandomList</code> 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 <code>next</code> 指针指向下一个节点，还有一个 <code>random</code> 指针指向链表中的任意节点或者 <code>null</code>。</p>
+<p><strong>示例 1：</strong></p>
+<p><img alt="img" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202309160904300.png" /></p>
+<pre><code>输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<p><img alt="img" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/01/09/e2.png" /></p>
+<pre><code>输入：head = [[1,1],[2,1]]
+输出：[[1,1],[2,1]]
+</code></pre>
+<p><strong>示例 3：</strong></p>
+<p><strong><img alt="img" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/01/09/e3.png" /></strong></p>
+<pre><code>输入：head = [[3,null],[3,0],[3,null]]
+输出：[[3,null],[3,0],[3,null]]
+</code></pre>
+<p><strong>示例 4：</strong></p>
+<pre><code>输入：head = []
+输出：[]
+解释：给定的链表为空（空指针），因此返回 null。
+</code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>-10000 &lt;= Node.val &lt;= 10000</code></li>
+<li><code>Node.random</code> 为空（null）或指向链表中的节点。</li>
+<li>节点数目不超过 1000 。</li>
+</ul>
+<p><strong>注意：</strong>本题与主站 138 题相同：https://leetcode-cn.com/problems/copy-list-with-random-pointer/</p>
+<h2 id="_42">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    Node* copyRandomList(Node* head) {
+        unordered_map&lt;Node*, Node*&gt; Aft;
+        Node *p = head;
+        while (p != nullptr)
+        {
+            Aft[p] = new Node(p-&gt;val);
+            p = p-&gt;next;
+        }
+        p = head;
+        while (p != nullptr)
+        {
+            Aft[p]-&gt;next = Aft[p-&gt;next];
+            Aft[p]-&gt;random = Aft[p-&gt;random];
+            p = p-&gt;next;
+        }
+        return Aft[head];
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_43">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    unordered_map&lt;Node*, Node*&gt; cachedNode;
+
+    Node* copyRandomList(Node* head) {
+        if (head == nullptr) {
+            return nullptr;
+        }
+        if (!cachedNode.count(head)) {
+            Node* headNew = new Node(head-&gt;val);
+            cachedNode[head] = headNew;
+            headNew-&gt;next = copyRandomList(head-&gt;next);
+            headNew-&gt;random = copyRandomList(head-&gt;random);
+        }
+        return cachedNode[head];
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_44">感想</h2>
+<p>回溯, 看起来比两遍遍历要好</p>
+<h1 id="offer-52-easy"><a href="https://leetcode.cn/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/">剑指 Offer 52. 两个链表的第一个公共节点</a>(easy)</h1>
+<p>2023/9/17</p>
+<p>00 : 05 : 35</p>
+<hr />
+<h2 id="_45">题目描述</h2>
+<p>输入两个链表，找出它们的第一个公共节点。</p>
+<p>如下面的两个链表<strong>：</strong></p>
+<p><a href="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_statement.png"><img alt="img" src="https://raw.githubusercontent.com/Tianjiangyigeyi/img/master/202309170918124.png" /></a></p>
+<p>在节点 c1 开始相交。</p>
+<p><strong>示例 1：</strong></p>
+<p><a href="https://assets.leetcode.com/uploads/2018/12/13/160_example_1.png"><img alt="img" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_1.png" /></a></p>
+<pre><code>输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+输出：Reference of the node with value = 8
+输入解释：相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<p><a href="https://assets.leetcode.com/uploads/2018/12/13/160_example_2.png"><img alt="img" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_2.png" /></a></p>
+<pre><code>输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+输出：Reference of the node with value = 2
+输入解释：相交节点的值为 2 （注意，如果两个列表相交则不能为 0）。从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。
+</code></pre>
+<p><strong>示例 3：</strong></p>
+<p><a href="https://assets.leetcode.com/uploads/2018/12/13/160_example_3.png"><img alt="img" src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/14/160_example_3.png" /></a></p>
+<pre><code>输入：intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
+输出：null
+输入解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。
+解释：这两个链表不相交，因此返回 null。
+</code></pre>
+<p><strong>注意：</strong></p>
+<ul>
+<li>如果两个链表没有交点，返回 <code>null</code>.</li>
+<li>在返回结果后，两个链表仍须保持原有的结构。</li>
+<li>可假定整个链表结构中没有循环。</li>
+<li>程序尽量满足 O(<em>n</em>) 时间复杂度，且仅用 O(<em>1</em>) 内存。</li>
+<li>本题与主站 160 题相同：https://leetcode-cn.com/problems/intersection-of-two-linked-lists/</li>
+</ul>
+<hr />
+<h2 id="_46">我的答案</h2>
+<pre><code class="language-c">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        if (headA == nullptr || headB == nullptr)
+        {
+            return nullptr;
+        }
+        ListNode *p1 = headA, *p2 = headB, *last = nullptr;
+        while (p1 != p2)
+        {
+            if (p1-&gt;next == nullptr)
+            {
+                if (last == nullptr)
+                {
+                    last = p1;
+                }
+                else if (p1 != last)
+                {
+                    return nullptr;
+                }
+                p1 = headB;
+            }
+            else
+            {
+                p1 = p1-&gt;next;
+            }
+            if (p2-&gt;next == nullptr)
+            {
+                if (last == nullptr)
+                {
+                    last = p2;
+                }
+                else if (p2 != last)
+                {
+                    return nullptr;
+                }
+                p2 = headA;
+            }
+            else
+            {
+                p2 = p2-&gt;next;
+            }
+        }
+        return p1;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_47">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        if (headA == nullptr || headB == nullptr) {
+            return nullptr;
+        }
+        ListNode *pA = headA, *pB = headB;
+        while (pA != pB) {
+            pA = pA == nullptr ? headB : pA-&gt;next;
+            pB = pB == nullptr ? headA : pB-&gt;next;
+        }
+        return pA;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_48">感想</h2>
+<p>题解更加优雅, 不相交可以理解成相交在nullptr</p>
+<h1 id="offer-57-seasy"><a href="https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/">剑指 Offer 57. 和为s的两个数字</a>(easy)</h1>
+<p>2023/9/18</p>
+<p>00 : 03 : 57</p>
+<hr />
+<h2 id="_49">题目描述</h2>
+<p>输入一个递增排序的数组和一个数字s，在数组中查找两个数，使得它们的和正好是s。如果有多对数字的和等于s，则输出任意一对即可。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：nums = [2,7,11,15], target = 9
+输出：[2,7] 或者 [7,2]
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入：nums = [10,26,30,31,47,60], target = 40
+输出：[10,30] 或者 [30,10]
+</code></pre>
+<p><strong>限制：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^5</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10^6</code></li>
+</ul>
+<hr />
+<h2 id="_50">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) {
+        unordered_set&lt;int&gt; visited;
+        for (auto &amp; num : nums)
+        {
+            if (visited.find(target - num) != visited.end())
+                return vector&lt;int&gt;({num, target - num});
+            if (visited.find(num) == visited.end())
+                visited.insert({num});
+        }
+        return vector&lt;int&gt;();
+    } 
+};
+</code></pre>
+<hr />
+<h2 id="_51">参考答案</h2>
+<hr />
+<h2 id="_52">感想</h2>
+<p>没注意看是有序数组, 有序的话肯定是双指针而不是用哈希表了</p>
+<h1 id="offer-58-i-easy"><a href="https://leetcode.cn/problems/fan-zhuan-dan-ci-shun-xu-lcof/">剑指 Offer 58 - I. 翻转单词顺序</a>(easy)</h1>
+<p>2023/9/18</p>
+<p>00 : 12 : 52</p>
+<hr />
+<h2 id="_53">题目描述</h2>
+<p>输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。为简单起见，标点符号和普通字母一样处理。例如输入字符串"I am a student. "，则输出"student. a am I"。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入: &quot;the sky is blue&quot;
+输出: &quot;blue is sky the&quot;
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入: &quot;  hello world!  &quot;
+输出: &quot;world! hello&quot;
+解释: 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
+</code></pre>
+<p><strong>示例 3：</strong></p>
+<pre><code>输入: &quot;a good   example&quot;
+输出: &quot;example good a&quot;
+解释: 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
+</code></pre>
+<p><strong>说明：</strong></p>
+<ul>
+<li>无空格字符构成一个单词。</li>
+<li>输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。</li>
+<li>如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。</li>
+</ul>
+<p><strong>注意：</strong>本题与主站 151 题相同：https://leetcode-cn.com/problems/reverse-words-in-a-string/</p>
+<p><strong>注意：</strong>此题对比原题有改动</p>
+<hr />
+<h2 id="_54">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    string reverseWords(string s) {
+        int n = s.length();
+        int left = 0, right = 0;
+        string res;
+        while (left &lt; n &amp;&amp; s[left] == ' ')
+            left++;
+        right = left;
+        while (right &lt; n &amp;&amp; s[right] != ' ')
+            right++;
+        res = s.substr(left, right - left);
+        left = ++right;
+
+        while (left &lt; n)
+        {
+            while (left &lt; n &amp;&amp; s[left] == ' ')
+                left++;
+            right = left;
+            while (right &lt; n &amp;&amp; s[right] != ' ')
+                right++;
+            if (right &gt; left)
+                res = s.substr(left, right - left) + &quot; &quot; + res;
+            left = ++right;
+        }
+        return res;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_55">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    string reverseWords(string s) {
+        int left = 0, right = s.size() - 1;
+        // 去掉字符串开头的空白字符
+        while (left &lt;= right &amp;&amp; s[left] == ' ') ++left;
+
+        // 去掉字符串末尾的空白字符
+        while (left &lt;= right &amp;&amp; s[right] == ' ') --right;
+
+        deque&lt;string&gt; d;
+        string word;
+
+        while (left &lt;= right) {
+            char c = s[left];
+            if (word.size() &amp;&amp; c == ' ') {
+                // 将单词 push 到队列的头部
+                d.push_front(move(word));
+                word = &quot;&quot;;
+            }
+            else if (c != ' ') {
+                word += c;
+            }
+            ++left;
+        }
+        d.push_front(move(word));
+
+        string ans;
+        while (!d.empty()) {
+            ans += d.front();
+            d.pop_front();
+            if (!d.empty()) ans += ' ';
+        }
+        return ans;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_56">感想</h2>
+<p>也可以先整个反转, 在局部反转</p>
+<h1 id="offer-58-ii-easy">剑指 Offer 58 - II. 左旋转字符串(easy)</h1>
+<p>2023/9/13</p>
+<p>00 : 01 : 26</p>
+<hr />
+<h2 id="_57">题目描述</h2>
+<p>字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串"abcdefg"和数字2，该函数将返回左旋转两位得到的结果"cdefgab"。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入: s = &quot;abcdefg&quot;, k = 2
+输出: &quot;cdefgab&quot;
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入: s = &quot;lrloseumgh&quot;, k = 6
+输出: &quot;umghlrlose&quot;
+</code></pre>
+<p><strong>限制：</strong></p>
+<ul>
+<li><code>1 &lt;= k &lt; s.length &lt;= 10000</code></li>
+</ul>
+<hr />
+<h2 id="_58">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    string reverseLeftWords(string s, int n) {
+        string res = s.substr(n);
+        res += s.substr(0, n);
+        return res;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_59">参考答案</h2>
+<hr />
+<h2 id="_60">感想</h2>
+<p>简单</p>
+<h1 id="offer-59-i-hard"><a href="https://leetcode.cn/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/">剑指 Offer 59 - I. 滑动窗口的最大值</a>(hard)</h1>
+<p>2023/9/20</p>
+<p>00 : 19 : 58</p>
+<hr />
+<h2 id="_61">题目描述</h2>
+<p>给定一个数组 <code>nums</code> 和滑动窗口的大小 <code>k</code>，请找出所有滑动窗口里的最大值。</p>
+<p><strong>示例:</strong></p>
+<pre><code>输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3
+输出: [3,3,5,5,6,7] 
+解释: 
+
+  滑动窗口的位置                最大值
+---------------               -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+</code></pre>
+<p><strong>提示：</strong></p>
+<p>你可以假设 <em>k</em> 总是有效的，在输入数组 <strong>不为空</strong> 的情况下，<code>1 ≤ k ≤ nums.length</code>。</p>
+<p>注意：本题与主站 239 题相同：https://leetcode-cn.com/problems/sliding-window-maximum/</p>
+<hr />
+<h2 id="_62">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) {
+        deque&lt;int&gt; q;
+        int n = nums.size();
+        vector&lt;int&gt; res;
+        for (int i = 0; i &lt; k; ++i)
+        {
+            while (!q.empty() &amp;&amp; nums[i] &gt;= nums[q.back()])
+            {
+                q.pop_back();
+            }
+            q.push_back(i);
+        }
+        res.push_back(nums[q.front()]);
+        for (int i = k; i &lt; n; ++i)
+        {
+            while (!q.empty() &amp;&amp; nums[i] &gt;= nums[q.back()])
+            {
+                q.pop_back();
+            }
+            q.push_back(i);
+            while (q.front() &lt;= i - k)
+            {
+                q.pop_front();
+            }
+            res.push_back(nums[q.front()]);
+        }
+        return res;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_63">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) {
+        int n = nums.size();
+        deque&lt;int&gt; q;
+        for (int i = 0; i &lt; k; ++i) {
+            while (!q.empty() &amp;&amp; nums[i] &gt;= nums[q.back()]) {
+                q.pop_back();
+            }
+            q.push_back(i);
+        }
+
+        vector&lt;int&gt; ans = {nums[q.front()]};
+        for (int i = k; i &lt; n; ++i) {
+            while (!q.empty() &amp;&amp; nums[i] &gt;= nums[q.back()]) {
+                q.pop_back();
+            }
+            q.push_back(i);
+            while (q.front() &lt;= i - k) {
+                q.pop_front();
+            }
+            ans.push_back(nums[q.front()]);
+        }
+        return ans;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_64">感想</h2>
+<p>做过, 但是只记得用堆了, 印象中还有更好的算法, 看了眼笔记知道是单调队列再写的</p>
+<h1 id="offer-59-ii-medium"><a href="https://leetcode.cn/problems/dui-lie-de-zui-da-zhi-lcof/">剑指 Offer 59 - II. 队列的最大值</a>(medium)</h1>
+<p>2023/9/20</p>
+<p>00 : 18 : 21</p>
+<hr />
+<h2 id="_65">题目描述</h2>
+<p>请定义一个队列并实现函数 <code>max_value</code> 得到队列里的最大值，要求函数<code>max_value</code>、<code>push_back</code> 和 <code>pop_front</code> 的<strong>均摊</strong>时间复杂度都是O(1)。</p>
+<p>若队列为空，<code>pop_front</code> 和 <code>max_value</code> 需要返回 -1</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入: 
+[&quot;MaxQueue&quot;,&quot;push_back&quot;,&quot;push_back&quot;,&quot;max_value&quot;,&quot;pop_front&quot;,&quot;max_value&quot;]
+[[],[1],[2],[],[],[]]
+输出: [null,null,null,2,1,2]
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入: 
+[&quot;MaxQueue&quot;,&quot;pop_front&quot;,&quot;max_value&quot;]
+[[],[],[]]
+输出: [null,-1,-1]
+</code></pre>
+<p><strong>限制：</strong></p>
+<ul>
+<li><code>1 &lt;= push_back,pop_front,max_value的总操作数 &lt;= 10000</code></li>
+<li><code>1 &lt;= value &lt;= 10^5</code></li>
+</ul>
+<hr />
+<h2 id="_66">我的答案</h2>
+<pre><code class="language-c">class MaxQueue {
+public:
+    MaxQueue() {
+
+    }
+
+    int max_value() {
+        if (assist.empty()) return -1;
+        return assist.front();
+    }
+
+    void push_back(int value) {
+        q.push(value);
+        while (!assist.empty() &amp;&amp; value &gt; assist.back())
+        {
+            assist.pop_back();
+        }
+        assist.push_back(value);
+    }
+
+    int pop_front() {
+        if (assist.empty()) return -1;
+        int tmp = q.front();
+        q.pop();
+        if (tmp == assist.front())
+        {
+            assist.pop_front();
+        }
+        return tmp;
+    }
+    deque&lt;int&gt; assist;
+    queue&lt;int&gt; q;
+};
+</code></pre>
+<hr />
+<h2 id="_67">参考答案</h2>
+<pre><code class="language-cpp">class MaxQueue {
+    queue&lt;int&gt; q;
+    deque&lt;int&gt; d;
+public:
+    MaxQueue() {
+    }
+
+    int max_value() {
+        if (d.empty())
+            return -1;
+        return d.front();
+    }
+
+    void push_back(int value) {
+        while (!d.empty() &amp;&amp; d.back() &lt; value) {
+            d.pop_back();
+        }
+        d.push_back(value);
+        q.push(value);
+    }
+
+    int pop_front() {
+        if (q.empty())
+            return -1;
+        int ans = q.front();
+        if (ans == d.front()) {
+            d.pop_front();
+        }
+        q.pop();
+        return ans;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_68">感想</h2>
+<p>和上一题是连着写的, 正好再应用了一次单调队列</p>
+<h1 id="offer-67-medium">剑指 Offer 67. 把字符串转换成整数(medium)</h1>
+<p>2023/9/14</p>
+<p>00 : 20 : 48</p>
+<hr />
+<h2 id="_69">题目描述</h2>
+<p>写一个函数 StrToInt，实现把字符串转换成整数这个功能。不能使用 atoi 或者其他类似的库函数。</p>
+<p>首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。</p>
+<p>当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。</p>
+<p>该字符串除了有效的整数部分之后也可能会存在多余的字符，这些字符可以被忽略，它们对于函数不应该造成影响。</p>
+<p>注意：假如该字符串中的第一个非空格字符不是一个有效整数字符、字符串为空或字符串仅包含空白字符时，则你的函数不需要进行转换。</p>
+<p>在任何情况下，若函数不能进行有效的转换时，请返回 0。</p>
+<p><strong>说明：</strong></p>
+<p>假设我们的环境只能存储 32 位大小的有符号整数，那么其数值范围为 [−231, 231 − 1]。如果数值超过这个范围，请返回  INT_MAX (231 − 1) 或 INT_MIN (−231) 。</p>
+<p><strong>示例 1:</strong></p>
+<pre><code>输入: &quot;42&quot;
+输出: 42
+</code></pre>
+<p><strong>示例 2:</strong></p>
+<pre><code>输入: &quot;   -42&quot;
+输出: -42
+解释: 第一个非空白字符为 '-', 它是一个负号。
+     我们尽可能将负号与后面所有连续出现的数字组合起来，最后得到 -42 。
+</code></pre>
+<p><strong>示例 3:</strong></p>
+<pre><code>输入: &quot;4193 with words&quot;
+输出: 4193
+解释: 转换截止于数字 '3' ，因为它的下一个字符不为数字。
+</code></pre>
+<p><strong>示例 4:</strong></p>
+<pre><code>输入: &quot;words and 987&quot;
+输出: 0
+解释: 第一个非空字符是 'w', 但它不是数字或正、负号。
+     因此无法执行有效的转换。
+</code></pre>
+<p><strong>示例 5:</strong></p>
+<pre><code>输入: &quot;-91283472332&quot;
+输出: -2147483648
+解释: 数字 &quot;-91283472332&quot; 超过 32 位有符号整数范围。 
+     因此返回 INT_MIN (−231) 。
+</code></pre>
+<p>注意：本题与主站 8 题相同：https://leetcode-cn.com/problems/string-to-integer-atoi/</p>
+<hr />
+<h2 id="_70">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    int strToInt(string str) {
+        int n = str.length();
+        int i = 0, sign = 1;
+        unsigned long max = 2147483647, res = 0;
+        while (str[i] == ' ')
+        {
+            i++;
+        }
+        str = str.substr(i);
+        n = str.size();
+        if (str[0] &lt;= '9' &amp;&amp; str[0] &gt;= '0')
+        {
+            res += str[0] - '0';
+        }
+        else if (str[0] == '-' || str[0] == '+')
+        {
+            sign = str[0] == '-' ? -1 : 1;
+            max = sign == 1 ? max : max + 1;
+        }
+        else 
+        {
+            return 0;
+        }
+        if (n == 1 || str[1] &lt; '0' || str[1] &gt; '9') return res * sign;
+        else
+        {
+            res = 10 * res + str[1] - '0';
+        }
+        for (i = 2; i &lt; n; ++i)
+        {
+            if (str[i] &gt;= '0' &amp;&amp; str[i] &lt;= '9')
+            {
+                if(10 * res + str[i] - '0' &gt; max)
+                {
+                    return max * sign;
+                }
+                else
+                {
+                    res = 10 * res + str[i] - '0'; 
+                }
+            }
+            else 
+            {
+                break;
+            }
+        }
+        return res * sign;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_71">参考答案</h2>
+<pre><code class="language-cpp">class Automaton {
+    string state = &quot;start&quot;;
+    unordered_map&lt;string, vector&lt;string&gt;&gt; table = {
+        {&quot;start&quot;, {&quot;start&quot;, &quot;signed&quot;, &quot;in_number&quot;, &quot;end&quot;}},
+        {&quot;signed&quot;, {&quot;end&quot;, &quot;end&quot;, &quot;in_number&quot;, &quot;end&quot;}},
+        {&quot;in_number&quot;, {&quot;end&quot;, &quot;end&quot;, &quot;in_number&quot;, &quot;end&quot;}},
+        {&quot;end&quot;, {&quot;end&quot;, &quot;end&quot;, &quot;end&quot;, &quot;end&quot;}}
+    };
+
+    int get_col(char c) {
+        if (isspace(c)) return 0;
+        if (c == '+' or c == '-') return 1;
+        if (isdigit(c)) return 2;
+        return 3;
+    }
+public:
+    int sign = 1;
+    long long ans = 0;
+
+    void get(char c) {
+        state = table[state][get_col(c)];
+        if (state == &quot;in_number&quot;) {
+            ans = ans * 10 + c - '0';
+            ans = sign == 1 ? min(ans, (long long)INT_MAX) : min(ans, -(long long)INT_MIN);
+        }
+        else if (state == &quot;signed&quot;)
+            sign = c == '+' ? 1 : -1;
+    }
+};
+
+class Solution {
+public:
+    int strToInt(string str) {
+        Automaton automaton;
+        for (char c : str)
+            automaton.get(c);
+        return automaton.sign * automaton.ans;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_72">感想</h2>
+<p>又是状态机, 我不喜欢, 可能是我水平还没到吧</p>
+<h1 id="lcr-120-easy"><a href="https://leetcode.cn/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">LCR 120. 寻找文件副本</a>(easy)</h1>
+<p>2023/9/22</p>
+<p>00 : 01: 56</p>
+<hr />
+<h2 id="_73">题目描述</h2>
+<p>设备中存有 <code>n</code> 个文件，文件 <code>id</code> 记于数组 <code>documents</code>。若文件 <code>id</code> 相同，则定义为该文件存在副本。请返回任一存在副本的文件 <code>id</code>。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：documents = [2, 5, 3, 0, 5, 0]
+输出：0 或 5
+</code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 ≤ documents[i] ≤ n-1</code></li>
+<li><code>2 &lt;= n &lt;= 100000</code></li>
+</ul>
+<hr />
+<h2 id="_74">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    int findRepeatDocument(vector&lt;int&gt;&amp; documents) {
+        int n = documents.size();
+        for (int i = 0; i &lt; n; ++i)
+        {
+            if (i == documents[i])
+            {
+                continue;
+            }
+            else if (documents[documents[i]] == documents[i])
+            {
+                return documents[i];
+            }
+            else
+            {
+                swap(documents[i], documents[documents[i]]);
+                i--;
+            }
+        }
+        return -1;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_75">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    int findRepeatNumber(vector&lt;int&gt;&amp; nums) {
+        int i = 0;
+        while(i &lt; nums.size()) {
+            if(nums[i] == i) {
+                i++;
+                continue;
+            }
+            if(nums[nums[i]] == nums[i])
+                return nums[i];
+            swap(nums[i],nums[nums[i]]);
+        }
+        return -1;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_76">感想</h2>
+<p>最容易想到的方法是哈希表, 用原地交换的这个方法可以省内存</p>
+<h1 id="lcr-146-easy"><a href="https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/">LCR 146. 螺旋遍历二维数组</a>(easy)</h1>
+<p>2023/9/21</p>
+<p>00 : 36 : 48</p>
+<hr />
+<h2 id="_77">题目描述</h2>
+<p>给定一个二维数组 <code>array</code>，请返回「<strong>螺旋遍历</strong>」该数组的结果。</p>
+<p><strong>螺旋遍历</strong>：从左上角开始，按照 <strong>向右</strong>、<strong>向下</strong>、<strong>向左</strong>、<strong>向上</strong> 的顺序 <strong>依次</strong> 提取元素，然后再进入内部一层重复相同的步骤，直到提取完所有元素。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：array = [[1,2,3],[8,9,4],[7,6,5]]
+输出：[1,2,3,4,5,6,7,8,9]
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入：array  = [[1,2,3,4],[12,13,14,5],[11,16,15,6],[10,9,8,7]]
+输出：[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+</code></pre>
+<p><strong>限制：</strong></p>
+<ul>
+<li><code>0 &lt;= array.length &lt;= 100</code></li>
+<li><code>0 &lt;= array[i].length &lt;= 100</code></li>
+</ul>
+<p>注意：本题与主站 54 题相同：https://leetcode-cn.com/problems/spiral-matrix/</p>
+<hr />
+<h2 id="_78">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    int m, n;
+    void next(pair&lt;int, int&gt;&amp; p, vector&lt;vector&lt;bool&gt;&gt; &amp;passedby)
+    {
+        int x = p.first;
+        int y = p.second;
+        passedby[x+1][y+1] = true;
+        if (passedby[x][y+1] &amp;&amp; passedby[x+1][y] &amp;&amp; !passedby[x+1][y+2])
+        {
+            p.second++;
+            return;
+        }
+        if (passedby[x+1][y+2] &amp;&amp; passedby[x][y+1] &amp;&amp; !passedby[x+2][y+1])
+        {
+            p.first++;
+            return;
+        }
+        if (passedby[x+1][y+2] &amp;&amp; passedby[x+2][y+1] &amp;&amp; !passedby[x+1][y])
+        {
+            p.second--;
+            return;
+        }
+        if (passedby[x+2][y+1] &amp;&amp; passedby[x+1][y] &amp;&amp; !passedby[x][y+1])
+        {
+            p.first--;
+            return;
+        }
+    }
+    vector&lt;int&gt; spiralArray(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) {
+        m = matrix.size();
+        if (m == 0)
+        {
+            return vector&lt;int&gt;(); 
+        }
+        n = matrix[0].size();
+        if (m == 0 || n == 0)
+        {
+            return vector&lt;int&gt;();
+        }
+        vector&lt;vector&lt;bool&gt;&gt; passedby(m+2, vector&lt;bool&gt;(n+2, false));
+        pair&lt;int, int&gt; p;
+        vector&lt;int&gt; ans(m * n);
+        for (int i = 0; i &lt;= m; ++i)
+        {
+            passedby[i][0] = true;
+            passedby[i][n+1] = true;
+        }
+        for (int i = 0; i &lt;= n; ++i)
+        {
+            passedby[0][i] = true;
+            passedby[m+1][i] = true;
+        }
+        for (int i = 0; i &lt; m * n; ++i)
+        {
+            ans[i] = matrix[p.first][p.second];
+            next(p, passedby);
+        }
+        return ans;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_79">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+private:
+    static constexpr int directions[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+public:
+    vector&lt;int&gt; spiralArray(vector&lt;vector&lt;int&gt;&gt;&amp; array) {
+        if (array.size() == 0 || array[0].size() == 0) {
+            return {};
+        }
+
+        int rows = array.size(), columns = array[0].size();
+        vector&lt;vector&lt;bool&gt;&gt; visited(rows, vector&lt;bool&gt;(columns));
+        int total = rows * columns;
+        vector&lt;int&gt; order(total);
+
+        int row = 0, column = 0;
+        int directionIndex = 0;
+        for (int i = 0; i &lt; total; i++) {
+            order[i] = array[row][column];
+            visited[row][column] = true;
+            int nextRow = row + directions[directionIndex][0], nextColumn = column + directions[directionIndex][1];
+            if (nextRow &lt; 0 || nextRow &gt;= rows || nextColumn &lt; 0 || nextColumn &gt;= columns || visited[nextRow][nextColumn]) {
+                directionIndex = (directionIndex + 1) % 4;
+            }
+            row += directions[directionIndex][0];
+            column += directions[directionIndex][1];
+        }
+        return order;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_80">感想</h2>
+<p>题目理解起来是不难, 但是代码写起来很恶心, 感觉应该是medium难度比较合适</p>
+<h1 id="lcr-148-medium"><a href="https://leetcode.cn/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/">LCR 148. 验证图书取出顺序</a>(medium)</h1>
+<p>2023/9/21</p>
+<p>00 : 08 : 28</p>
+<hr />
+<h2 id="_81">题目描述</h2>
+<p>现在图书馆有一堆图书需要放入书架，并且图书馆的书架是一种特殊的数据结构，只能按照 <strong>一定</strong> 的顺序 <strong>放入</strong> 和 <strong>拿取</strong> 书籍。</p>
+<p>给定一个表示图书放入顺序的整数序列 <code>putIn</code>，请判断序列 <code>takeOut</code> 是否为按照正确的顺序拿取书籍的操作序列。你可以假设放入书架的所有书籍编号都不相同。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入：putIn = [6,7,8,9,10,11], takeOut = [9,11,10,8,7,6]
+输出：true
+解释：我们可以按以下操作放入并拿取书籍：
+push(6), push(7), push(8), push(9), pop() -&gt; 9,
+push(11), push(10),pop() -&gt; 11,pop() -&gt; 10, pop() -&gt; 8, pop() -&gt; 7, pop() -&gt; 6
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入：putIn = [6,7,8,9,10,11], takeOut = [11,9,8,10,6,7]
+输出：false
+解释：6 不能在 7 之前取出。
+</code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= putIn.length == takeOut.length &lt;= 1000</code></li>
+<li><code>0 &lt;= putIn[i], takeOut &lt; 1000</code></li>
+<li><code>putIn</code> 是 <code>takeOut</code> 的排列。</li>
+</ul>
+<p>注意：本题与主站 946 题相同：https://leetcode-cn.com/problems/validate-stack-sequences/</p>
+<hr />
+<h2 id="_82">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    bool validateBookSequences(vector&lt;int&gt;&amp; putIn, vector&lt;int&gt;&amp; takeOut) {
+        stack&lt;int&gt; stk;
+        int n = putIn.size();
+        int remain = n;
+        for (int i = 0; i &lt; n; ++i)
+        {
+            if (putIn[i] != takeOut[n - remain])
+            {
+                stk.push(putIn[i]);
+            }
+            else
+            {
+                remain--;
+                while (!stk.empty() &amp;&amp; stk.top() == takeOut[n - remain])
+                {
+                    remain--;
+                    stk.pop();
+                }
+            }
+        }
+        return remain == 0;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_83">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    bool validateBookSequences(vector&lt;int&gt;&amp; putIn, vector&lt;int&gt;&amp; takeOut) {
+        stack&lt;int&gt; stk;
+        int n = putIn.size();
+        int remain = n;
+        for (int i = 0; i &lt; n; ++i)
+        {
+            stk.push(putIn[i]);
+            while (!stk.empty() &amp;&amp; stk.top() == takeOut[n - remain])
+            {
+                remain--;
+                stk.pop();
+            }
+        }
+        return remain == 0;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_84">感想</h2>
+<p>这题就比较简单了, 应该为easy</p>
+<h1 id="lcr-172-easy"><a href="https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/">LCR 172. 统计目标成绩的出现次数</a>(easy)</h1>
+<p>2023/9/22</p>
+<p>00 : 01 : 06</p>
+<hr />
+<h2 id="_85">题目描述</h2>
+<p>某班级考试成绩按非严格递增顺序记录于整数数组 <code>scores</code>，请返回目标成绩 <code>target</code> 的出现次数。</p>
+<p><strong>示例 1：</strong></p>
+<pre><code>输入: scores = [2, 2, 3, 4, 4, 4, 5, 6, 6, 8], target = 4
+输出: 3
+</code></pre>
+<p><strong>示例 2：</strong></p>
+<pre><code>输入: scores = [1, 2, 3, 5, 7, 9], target = 6
+输出: 0
+</code></pre>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= scores.length &lt;= 105</code></li>
+<li><code>-109 &lt;= scores[i] &lt;= 109</code></li>
+<li><code>scores</code> 是一个非递减数组</li>
+<li><code>-109 &lt;= target &lt;= 109</code></li>
+</ul>
+<p><strong>注意：</strong>本题与主站 34 题相同（仅返回值不同）：https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/</p>
+<hr />
+<h2 id="_86">我的答案</h2>
+<pre><code class="language-c">class Solution {
+public:
+    int binarySearchLeft(vector&lt;int&gt;&amp; scores, int &amp;target, int left, int right)
+    {
+        if (left == right)
+        {
+            return scores[left] == target ? left : -1;
+        }
+        int mid = (left + right) / 2;
+        if (scores[mid] &lt; target)
+        {
+            return binarySearchLeft(scores, target, mid + 1, right);
+        }
+        else
+        {
+            return binarySearchLeft(scores, target, left, mid);
+        }
+    }
+    int binarySearchRight(vector&lt;int&gt;&amp; scores, int &amp;target, int left, int right)
+    {
+        if (left == right)
+        {
+            return scores[left] == target ? left : -1;
+        }
+        int mid = (left + right + 1) / 2;
+        if (scores[mid] &lt;= target)
+        {
+            return binarySearchRight(scores, target, mid, right);
+        }
+        else
+        {
+            return binarySearchRight(scores, target, left, mid -1);
+        }
+    }
+    int countTarget(vector&lt;int&gt;&amp; scores, int target) {
+        if (scores.size() == 0)
+        {
+            return 0;
+        }
+        int left = binarySearchLeft(scores, target, 0, scores.size()-1);
+        int right = binarySearchRight(scores, target, 0, scores.size()-1);
+        return right != -1 ? right - left + 1 : 0;
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_87">参考答案</h2>
+<pre><code class="language-cpp">class Solution {
+public:
+    int search(vector&lt;int&gt;&amp; nums, int target) {
+        return upper_bound(begin(nums), end(nums), target) - lower_bound(begin(nums), end(nums), target);
+    }
+};
+</code></pre>
+<hr />
+<h2 id="_88">感想</h2>
+<p>一开始没有看到是递增的序列, 直接O(n)遍历了, 还在想怎么这么无脑, 看了题解才发现是递增序列, 又再写了一遍二分的版本, 不得不说二分的边界确实不好判断</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
