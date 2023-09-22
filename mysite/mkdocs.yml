@@ -23,26 +23,9 @@ nav:
       - DB: 主干课程/DB.md
       - ADS: 主干课程/ads.md
   - LeetCode刷题笔记:
-      - 动态规划: LeetCode刷题笔记/动态规划.md
-      - 排序: LeetCode刷题笔记/排序.md
-      - 1.两数之和(easy): LeetCode刷题笔记/1两数之和.md
-      - 2.两数相加(medium): LeetCode刷题笔记/2两数相加.md
-      - 3.无重复字符的最长子串(medium): LeetCode刷题笔记/3无重复字符的最长子串.md
-      - 4.寻找两个正序数组的中位数(hard): LeetCode刷题笔记/4寻找两个正序数组的中位数.md
-      - 5.最长回文子串(medium): LeetCode刷题笔记/5最长回文子串.md
-      - 6.正则表达式匹配(hard): LeetCode刷题笔记/6正则表达式匹配.md
-      - 7.盛最多水的容器(medium): LeetCode刷题笔记/7盛最多水的容器.md
-      - 8.三数之和(medium): LeetCode刷题笔记/8三数之和.md
-      - 9.电话号码的字母组合(medium): LeetCode刷题笔记/9电话号码的字母组合.md
-      - 10.删除链表的倒数第 N 个结点(medium): LeetCode刷题笔记/10删除链表的倒数第 N 个结点.md
-      - 11.有效的括号(easy): LeetCode刷题笔记/11有效的括号.md
-      - 12.合并两个有序链表(easy): LeetCode刷题笔记/12合并两个有序链表.md
-      - 13.括号生成(medium): LeetCode刷题笔记/13括号生成.md
-      - 14.合并 K 个升序链表(hard): LeetCode刷题笔记/14合并 K 个升序链表.md
-      - 15.下一个排列(medium): LeetCode刷题笔记/15下一个排列.md
-      - 16.最长有效括号(hard): LeetCode刷题笔记/16最长有效括号.md
-      - 17.搜索旋转排序数组(medium): LeetCode刷题笔记/17搜索旋转排序数组.md
-      - 18.在排序数组中查找元素的第一个和最后一个位置(medium): LeetCode刷题笔记/18在排序数组中查找元素的第一个和最后一个位置.md
+      - Hot100: LeetCode刷题笔记/Hot100.md
+      - 剑指offer: LeetCode刷题笔记/剑指offer.md
+      - 每日一题: LeetCode刷题笔记/每日一题.md
   - 图形学:
       - SSR算法小记: 图形学/SSR算法小记(Screen-Space-Reflection).md
       - OpenGL: 图形学/LearnOpenGL.md
